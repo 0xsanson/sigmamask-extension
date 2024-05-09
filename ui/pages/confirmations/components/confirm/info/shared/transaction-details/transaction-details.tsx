@@ -7,10 +7,10 @@ import {
   ConfirmInfoRowAddress,
   ConfirmInfoRowText,
   ConfirmInfoRowUrl,
-} from '../../../../../../components/app/confirm/info/row';
-import { useI18nContext } from '../../../../../../hooks/useI18nContext';
-import { currentConfirmationSelector } from '../../../../selectors';
-import { useKnownMethodDataInTransaction } from '../hooks/known-method-data-in-transaction';
+} from '../../../../../../../components/app/confirm/info/row';
+import { useI18nContext } from '../../../../../../../hooks/useI18nContext';
+import { currentConfirmationSelector } from '../../../../../selectors';
+import { useKnownMethodDataInTransaction } from '../../hooks/known-method-data-in-transaction';
 
 const OriginRow = () => {
   const t = useI18nContext();

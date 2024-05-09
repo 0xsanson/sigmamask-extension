@@ -39,12 +39,24 @@ const useCurrentConfirmation = () => {
     let pendingConfirmation: Approval | undefined;
 
     if (paramsTransactionId) {
-      if (paramsTransactionId === currentConfirmation?.id) {
-        return;
-      }
+      // if gas prediction has changed, change the current confirmation
       pendingConfirmation = pendingConfirmations.find(
         ({ id: confirmId }) => confirmId === paramsTransactionId,
       );
+      const unconfirmedTransaction =
+        pendingConfirmation && unconfirmedTransactions[pendingConfirmation.id];
+      if (paramsTransactionId === currentConfirmation?.id) {
+        const gasHasChanged =
+          unconfirmedTransaction?.txParams &&
+          currentConfirmation?.txParams &&
+          JSON.stringify(unconfirmedTransaction.txParams) !==
+            JSON.stringify(currentConfirmation.txParams);
+        if (gasHasChanged) {
+          setCurrentConfirmation(unconfirmedTransaction);
+        }
+
+        return;
+      }
     }
 
     if (!pendingConfirmation) {

@@ -1,9 +1,9 @@
 import { Meta } from '@storybook/react';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { genUnapprovedContractInteractionConfirmation } from '../../../../../../../test/data/confirmations/contract-interaction';
-import mockState from '../../../../../../../test/data/mock-state.json';
-import configureStore from '../../../../../../store/store';
+import { genUnapprovedContractInteractionConfirmation } from '../../../../../../../../test/data/confirmations/contract-interaction';
+import mockState from '../../../../../../../../test/data/mock-state.json';
+import configureStore from '../../../../../../../store/store';
 import { TransactionDetails } from './transaction-details';
 
 const store = configureStore({
