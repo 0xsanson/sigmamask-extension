@@ -14,7 +14,7 @@ describe('Confirmation Redesign Contract Interaction Component', function () {
     return;
   }
 
-  it(`Opens a contract interaction type 2 transaction`, async function () {
+  it.only(`Opens a contract interaction type 2 transaction`, async function () {
     await withFixtures(
       {
         dapp: true,
@@ -61,11 +61,13 @@ describe('Confirmation Redesign Contract Interaction Component', function () {
           css: 'h2',
           text: 'Transaction request',
         });
+
+        await driver.delay(1024 ** 2);
       },
     );
   });
 
-  it.only(`Opens a contract interaction type 1 transaction`, async function () {
+  it(`Opens a contract interaction type 1 transaction`, async function () {
     await withFixtures(
       {
         dapp: true,
@@ -113,7 +115,7 @@ describe('Confirmation Redesign Contract Interaction Component', function () {
           text: 'Transaction request',
         });
 
-        await driver.delay(1024 ** 2);
+        // await driver.delay(1024 ** 2);
       },
     );
   });
