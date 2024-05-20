@@ -136,7 +136,7 @@
     "fragments": "object",
     "segmentApiCalls": "object",
     "currentCurrency": "usd",
-    "alertEnabledness": { "unconnectedAccount": true, "web3ShimUsage": true },
+    "alertEnabledness": { "web3ShimUsage": true },
     "unconnectedAccountAlertShownOrigins": "object",
     "web3ShimUsageOrigins": "object",
     "seedPhraseBackedUp": true,
@@ -248,6 +248,5 @@
     "versionFileETag": "string"
   },
   "send": "object",
-  "swaps": "object",
-  "unconnectedAccount": { "state": "CLOSED" }
+  "swaps": "object"
 }
