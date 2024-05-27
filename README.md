@@ -1,47 +1,6 @@
-# MetaMask Browser Extension
+# SigmaMask
 
-You can find the latest version of MetaMask on [our official website](https://metamask.io/). For help using MetaMask, visit our [User Support Site](https://metamask.zendesk.com/hc/en-us).
-
-For [general questions](https://community.metamask.io/c/learn/26), [feature requests](https://community.metamask.io/c/feature-requests-ideas/13), or [developer questions](https://community.metamask.io/c/developer-questions/11), visit our [Community Forum](https://community.metamask.io/).
-
-MetaMask supports Firefox, Google Chrome, and Chromium-based browsers. We recommend using the latest available browser version.
-
-For up to the minute news, follow our [Twitter](https://twitter.com/metamask) or [Medium](https://medium.com/metamask) pages.
-
-To learn how to develop MetaMask-compatible applications, visit our [Developer Docs](https://metamask.github.io/metamask-docs/).
-
-To learn how to contribute to the MetaMask project itself, visit our [Internal Docs](https://github.com/MetaMask/metamask-extension/tree/develop/docs).
-
-## GitHub Codespaces quickstart
-
-As an alternative to building on your local machine, there is a new option to get a development environment up and running in less than 5 minutes by using GitHub Codespaces. Please note that there is a [Limited Free Monthly Quota](https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces), and after that GitHub will start charging you.
-
-_Note: You are billed for both time spent running, and for storage used_
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/MetaMask/metamask-extension?quickstart=1)
-
-1. Start by clicking the button above
-2. A new browser tab will open with a remote version of Visual Studio Code (this will take a few minutes to load)
-3. A "Simple Browser" will open inside the browser with noVNC -- click Connect
-   - Optional steps:
-     - Click the button at the upper-right of the Simple Browser tab to open the noVNC window in its own tab
-     - Open the noVNC sidebar on the left, click the gear icon, change the Scaling Mode to Remote Resizing
-4. Wait about 20 extra seconds on the first launch, for the scripts to finish
-5. Right-click on the noVNC desktop to launch Chrome or Firefox with MetaMask pre-installed
-6. Change some code, then run `yarn start` to build in dev mode
-7. After a minute or two, it will finish building, and you can see your changes in the noVNC desktop
-
-### Tips to keep your Codespaces usage lower
-
-- You are billed for both time spent running, and for storage used
-- Codespaces pause after 30 minutes of inactivity, and auto-delete after 30 days of inactivity
-- You can manage your Codespaces here: https://github.com/codespaces
-  - You may want to manually pause them before the 30 minute timeout
-  - If you have several idle Codespaces hanging around for several days, you can quickly run out of storage quota. You should delete the ones you do not plan to use anymore, and probably keep only 1 or 2 in the long-term. It's also possible to re-use old Codespaces and switch the branch, instead of creating new ones and deleting the old ones.
-
-### Codespaces on a fork
-
-If you are not a MetaMask Internal Developer, or are otherwise developing on a fork, the default Infura key will be on the Free Plan and have very limited requests per second. If you want to use your own Infura key, follow the `.metamaskrc` and `INFURA_PROJECT_ID` instructions in the section [Building on your local machine](#building-on-your-local-machine).
+This is a fork of MetaMask for test purposes. Do not use in production.
 
 ## Building on your local machine
 
@@ -65,16 +24,6 @@ If you are not a MetaMask Internal Developer, or are otherwise developing on a f
   - [How to add custom build to Chrome](./docs/add-to-chrome.md)
   - [How to add custom build to Firefox](./docs/add-to-firefox.md)
 
-## Git Hooks
-
-To get quick feedback from our shared code quality fitness functions before committing the code, you can install our git hooks with Husky.
-
-`$ yarn githooks:install`
-
-You can read more about them in our [testing documentation](./docs/testing.md#fitness-functions-measuring-progress-in-code-quality-and-preventing-regressions-using-custom-git-hooks).
-
-If you are using VS Code and are unable to make commits from the source control sidebar due to a "command not found" error, try these steps from the [Husky docs](https://typicode.github.io/husky/troubleshooting.html#command-not-found).
-
 ## Contributing
 
 ### Development builds
@@ -94,100 +43,6 @@ To start the [Redux DevTools Extension](https://github.com/reduxjs/redux-devtool
 Then run the command `yarn devtools:redux` with a development build installed in a browser. This will enable you to use the Redux DevTools extension to inspect MetaMask.
 
 To create a development build and run both of these tools simultaneously, run `yarn start:dev`.
-
-#### Test Dapp
-
-[This test site](https://metamask.github.io/test-dapp/) can be used to execute different user flows.
-
-### Running Unit Tests and Linting
-
-Run unit tests and the linter with `yarn test`. To run just unit tests, run `yarn test:unit`.
-
-You can run the linter by itself with `yarn lint`, and you can automatically fix some lint problems with `yarn lint:fix`. You can also run these two commands just on your local changes to save time with `yarn lint:changed` and `yarn lint:changed:fix` respectively.
-
-For Jest debugging guide using Node.js, see [docs/tests/jest.md](docs/tests/jest.md).
-
-### Running E2E Tests
-
-Our e2e test suite can be run on either Firefox or Chrome. Here's how to get started with e2e testing:
-
-#### Preparing a Test Build
-
-Before running e2e tests, ensure you've run `yarn install` to download dependencies. Next, you'll need a test build. You have 3 options:
-
-1. Use `yarn download-builds:test` to quickly download and unzip test builds for Chrome and Firefox into the `./dist/` folder. This method is fast and convenient for standard testing.
-2. Create a custom test build: for testing against different build types, use `yarn build:test`. This command allows you to generate test builds for various types, including:
-   - `yarn build:test` for main build
-   - `yarn build:test:flask` for flask build
-   - `yarn build:test:mmi` for mmi build
-   - `yarn build:test:mv3` for mv3 build
-3. Start a test build with live changes: `yarn start:test` is particularly useful for development. It starts a test build that automatically recompiles application code upon changes. This option is ideal for iterative testing and development. This command also allows you to generate test builds for various types, including:
-   - `yarn start:test` for main build
-   - `yarn start:test:flask` for flask build
-   - `yarn start:test:mv3` for mv3 build
-
-Note: The `yarn start:test` command (which initiates the testDev build type) has LavaMoat disabled for both the build system and the application, offering a streamlined testing experience during development. On the other hand, `yarn build:test` enables LavaMoat for enhanced security in both the build system and application, mirroring production environments more closely.
-
-#### Running Tests
-
-Once you have your test build ready, choose the browser for your e2e tests:
-
-- For Firefox, run `yarn test:e2e:firefox`.
-- For Chrome, run `yarn test:e2e:chrome`.
-
-These scripts support additional options for debugging. Use `--help`to see all available options.
-
-#### Running a single e2e test
-
-Single e2e tests can be run with `yarn test:e2e:single test/e2e/tests/TEST_NAME.spec.js` along with the options below.
-
-```console
-  --browser           Set the browser to be used; specify 'chrome', 'firefox', 'all'
-                      or leave unset to run on 'all' by default.
-                                                          [string] [default: 'all']
-  --debug             Run tests in debug mode, logging each driver interaction
-                                                         [boolean] [default: true]
-  --retries           Set how many times the test should be retried upon failure.
-                                                              [number] [default: 0]
-  --leave-running     Leaves the browser running after a test fails, along with
-                      anything else that the test used (ganache, the test dapp,
-                      etc.)                              [boolean] [default: false]
-  --update-snapshot   Update E2E test snapshots
-                                             [alias: -u] [boolean] [default: false]
-```
-
-For example, to run the `account-details` tests using Chrome, with debug logging and with the browser set to remain open upon failure, you would use:
-`yarn test:e2e:single test/e2e/tests/account-menu/account-details.spec.js --browser=chrome --leave-running`
-
-#### Running e2e tests against specific feature flag
-
-While developing new features, we often use feature flags. As we prepare to make these features generally available (GA), we remove the feature flags. Existing feature flags are listed in the `.metamaskrc.dist` file. To execute e2e tests with a particular feature flag enabled, it's necessary to first generate a test build with that feature flag activated. There are two ways to achieve this:
-
-- To enable a feature flag in your local configuration, you should first ensure you have a `.metamaskrc` file copied from `.metamaskrc.dist`. Then, within your local `.metamaskrc` file, you can set the desired feature flag to true. Following this, a test build with the feature flag enabled can be created by executing `yarn build:test`.
-
-- Alternatively, for enabling a feature flag directly during the test build creation, you can pass the parameter as true via the command line. For instance, activating the MULTICHAIN feature flag can be done by running `MULTICHAIN=1 yarn build:test` or `MULTICHAIN=1 yarn start:test` . This method allows for quick adjustments to feature flags without altering the `.metamaskrc` file.
-
-Once you've created a test build with the desired feature flag enabled, proceed to run your tests as usual. Your tests will now run against the version of the extension with the specific feature flag activated. For example:
-`yarn test:e2e:single test/e2e/tests/account-menu/account-details.spec.js --browser=chrome`
-
-This approach ensures that your e2e tests accurately reflect the user experience for the upcoming GA features.
-
-#### Running specific builds types e2e test
-
-Different build types have different e2e tests sets. In order to run them look in the `package.json` file. You will find:
-
-```console
-    "test:e2e:chrome:mmi": "SELENIUM_BROWSER=chrome node test/e2e/run-all.js --mmi",
-    "test:e2e:chrome:snaps": "SELENIUM_BROWSER=chrome node test/e2e/run-all.js --snaps",
-    "test:e2e:chrome:mv3": "ENABLE_MV3=true SELENIUM_BROWSER=chrome node test/e2e/run-all.js",
-```
-
-#### Note: Running MMI e2e tests
-
-When running e2e on an MMI build you need to know that there are 2 separated set of tests:
-
-- MMI runs a subset of MetaMask's e2e tests. To facilitate this, we have appended the `@no-mmi` tags to the names of those tests that are not applicable to this build type.
-- MMI runs another specific set of e2e legacy tests which are better documented [here](test/e2e/mmi/README.md)
 
 ### Changing dependencies
 
