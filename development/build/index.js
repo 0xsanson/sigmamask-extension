@@ -164,7 +164,7 @@ async function defineAndRunBuildTasks() {
     });
   }
 
-  const browserPlatforms = platform ? [platform] : ['firefox', 'chrome'];
+  const browserPlatforms = platform ? [platform] : ['chrome'];
 
   const browserVersionMap = getBrowserVersionMap(browserPlatforms, version);
 
