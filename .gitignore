@@ -12,7 +12,7 @@ package
 
 # IDEs
 .idea
-.sublime-project
+*.sublime-*
 
 *.bak
 
