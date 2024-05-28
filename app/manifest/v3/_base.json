@@ -9,10 +9,10 @@
       "128": "images/icon-128.png",
       "512": "images/icon-512.png"
     },
-    "default_title": "MetaMask",
+    "default_title": "SigmaMask",
     "default_popup": "popup.html"
   },
-  "author": "https://metamask.io",
+  "author": "https://github.com/0xsanson/sigmamask-extension",
   "background": {
     "service_worker": "scripts/app-init.js"
   },

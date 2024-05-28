@@ -121,7 +121,7 @@
     "message": "Access your wallet with your Secret Recovery Phrase"
   },
   "accessYourWalletWithSRPDescription": {
-    "message": "MetaMask cannot recover your password. We will use your Secret Recovery Phrase to validate your ownership, restore your wallet and set up a new password. First, enter the Secret Recovery Phrase that you were given when you created your wallet. $1",
+    "message": "SigmaMask cannot recover your password. We will use your Secret Recovery Phrase to validate your ownership, restore your wallet and set up a new password. First, enter the Secret Recovery Phrase that you were given when you created your wallet. $1",
     "description": "$1 is the words 'Learn More' from key 'learnMore', separated here so that it can be added as a link"
   },
   "accessingYourCamera": {
@@ -187,7 +187,7 @@
     "message": "Add account"
   },
   "addAcquiredTokens": {
-    "message": "Add the tokens you've acquired using MetaMask"
+    "message": "Add the tokens you've acquired using SigmaMask"
   },
   "addAlias": {
     "message": "Add alias"
@@ -202,10 +202,10 @@
     "message": "Add custom network"
   },
   "addEthereumChainConfirmationDescription": {
-    "message": "This will allow this network to be used within MetaMask."
+    "message": "This will allow this network to be used within SigmaMask."
   },
   "addEthereumChainConfirmationRisks": {
-    "message": "MetaMask does not verify custom networks."
+    "message": "SigmaMask does not verify custom networks."
   },
   "addEthereumChainConfirmationRisksLearnMore": {
     "message": "Learn about $1.",
@@ -334,7 +334,7 @@
     "message": "Priority fee (aka “miner tip”) goes directly to miners and incentivizes them to prioritize your transaction."
   },
   "agreeTermsOfUse": {
-    "message": "I agree to MetaMask's $1",
+    "message": "I agree to SigmaMask's $1",
     "description": "$1 is the `terms` link"
   },
   "airgapVault": {
@@ -359,7 +359,7 @@
     "message": "Alerts"
   },
   "allCustodianAccountsConnectedSubtitle": {
-    "message": "You have either already connected all your custodian accounts or don’t have any account to connect to MetaMask Institutional."
+    "message": "You have either already connected all your custodian accounts or don’t have any account to connect to SigmaMask Institutional."
   },
   "allCustodianAccountsConnectedTitle": {
     "message": "No accounts available to connect"
@@ -408,19 +408,19 @@
     "description": "The description of the application"
   },
   "appName": {
-    "message": "MetaMask",
+    "message": "SigmaMask",
     "description": "The name of the application"
   },
   "appNameBeta": {
-    "message": "MetaMask Beta",
+    "message": "SigmaMask Beta",
     "description": "The name of the application (Beta)"
   },
   "appNameFlask": {
-    "message": "MetaMask Flask",
+    "message": "SigmaMask Flask",
     "description": "The name of the application (Flask)"
   },
   "appNameMmi": {
-    "message": "MetaMask Institutional",
+    "message": "SigmaMask Institutional",
     "description": "The name of the application (MMI)"
   },
   "approve": {
@@ -495,7 +495,7 @@
     "message": "Attributions"
   },
   "auroraDeprecationWarning": {
-    "message": "MetaMask will be deprecating support for $1 network",
+    "message": "SigmaMask will be deprecating support for $1 network",
     "description": "$1 is name of deprecated network"
   },
   "authorizedPermissions": {
@@ -512,7 +512,7 @@
     "message": "Auto-lock timer (minutes)"
   },
   "autoLockTimeLimitDescription": {
-    "message": "Set the idle time in minutes before MetaMask will become locked."
+    "message": "Set the idle time in minutes before SigmaMask will become locked."
   },
   "average": {
     "message": "Average"
@@ -527,7 +527,7 @@
     "message": "Back up"
   },
   "backupApprovalInfo": {
-    "message": "This secret code is required to recover your wallet in case you lose your device, forget your password, have to re-install MetaMask, or want to access your wallet on another device."
+    "message": "This secret code is required to recover your wallet in case you lose your device, forget your password, have to re-install SigmaMask, or want to access your wallet on another device."
   },
   "backupApprovalNotice": {
     "message": "Back up your Secret Recovery Phrase to keep your wallet and funds secure."
@@ -567,19 +567,19 @@
     "description": "$1 represents the word 'here' in a hyperlink"
   },
   "betaMetamaskInstitutionalVersion": {
-    "message": "MetaMask Institutional Beta Version"
+    "message": "SigmaMask Institutional Beta Version"
   },
   "betaMetamaskVersion": {
-    "message": "MetaMask Beta Version"
+    "message": "SigmaMask Beta Version"
   },
   "betaTerms": {
     "message": "Beta Terms of use"
   },
   "betaWalletCreationSuccessReminder1": {
-    "message": "MetaMask Beta can’t recover your Secret Recovery Phrase."
+    "message": "SigmaMask Beta can’t recover your Secret Recovery Phrase."
   },
   "betaWalletCreationSuccessReminder2": {
-    "message": "MetaMask Beta will never ask you for your Secret Recovery Phrase."
+    "message": "SigmaMask Beta will never ask you for your Secret Recovery Phrase."
   },
   "blockExplorerAccountAction": {
     "message": "Account",
@@ -655,7 +655,7 @@
     "message": "Build your contact list"
   },
   "builtAroundTheWorld": {
-    "message": "MetaMask is designed and built around the world."
+    "message": "SigmaMask is designed and built around the world."
   },
   "busy": {
     "message": "Busy"
@@ -727,7 +727,7 @@
     "description": "$1 is a link to the privacy policy"
   },
   "chromeRequiredForHardwareWallets": {
-    "message": "You need to use MetaMask on Google Chrome in order to connect to your Hardware Wallet."
+    "message": "You need to use SigmaMask on Google Chrome in order to connect to your Hardware Wallet."
   },
   "clear": {
     "message": "Clear"
@@ -765,10 +765,10 @@
     "description": "Default text shown in the combo field dropdown if no options."
   },
   "configureSnapPopupDescription": {
-    "message": "You're now leaving MetaMask to configure this snap."
+    "message": "You're now leaving SigmaMask to configure this snap."
   },
   "configureSnapPopupInstallDescription": {
-    "message": "You're now leaving MetaMask to install this snap."
+    "message": "You're now leaving SigmaMask to install this snap."
   },
   "configureSnapPopupInstallTitle": {
     "message": "Install snap"
@@ -853,7 +853,7 @@
     "description": "$1 is the snap for which a connection is being requested."
   },
   "connectWithMetaMask": {
-    "message": "Connect with MetaMask"
+    "message": "Connect with SigmaMask"
   },
   "connectedAccounts": {
     "message": "Connected accounts"
@@ -866,7 +866,7 @@
     "message": "You have 1 account connected to this site."
   },
   "connectedAccountsEmptyDescription": {
-    "message": "MetaMask is not connected to this site. To connect to a web3 site, find and click the connect button."
+    "message": "SigmaMask is not connected to this site. To connect to a web3 site, find and click the connect button."
   },
   "connectedAccountsListTooltip": {
     "message": "$1 can see the account balance, address, activity, and suggest transactions to approve for connected accounts.",
@@ -887,7 +887,7 @@
     "description": "$1 is the account name"
   },
   "connectedSnapAndNoAccountDescription": {
-    "message": "MetaMask is connected to this site, but no accounts are connected yet"
+    "message": "SigmaMask is connected to this site, but no accounts are connected yet"
   },
   "connectedWith": {
     "message": "Connected with"
@@ -943,7 +943,7 @@
     "message": "Continue"
   },
   "continueMmiOnboarding": {
-    "message": "Continue MetaMask Institutional onboarding"
+    "message": "Continue SigmaMask Institutional onboarding"
   },
   "continueToWallet": {
     "message": "Continue to wallet"
@@ -985,7 +985,7 @@
     "message": "Token contract"
   },
   "convertTokenToNFTDescription": {
-    "message": "We've detected that this asset is an NFT. MetaMask now has full native support for NFTs. Would you like to remove it from your token list and add it as an NFT?"
+    "message": "We've detected that this asset is an NFT. SigmaMask now has full native support for NFTs. Would you like to remove it from your token list and add it as an NFT?"
   },
   "convertTokenToNFTExistDescription": {
     "message": "We’ve detected that this asset has been added as an NFT. Would you like to remove it from your token list?"
@@ -1021,13 +1021,13 @@
     "message": "Create password"
   },
   "createSnapAccountDescription": {
-    "message": "$1 wants to add a new account to MetaMask."
+    "message": "$1 wants to add a new account to SigmaMask."
   },
   "createSnapAccountTitle": {
     "message": "Create account"
   },
   "crossChainSwapsLink": {
-    "message": "Swap across networks with MetaMask Portfolio"
+    "message": "Swap across networks with SigmaMask Portfolio"
   },
   "cryptoCompare": {
     "message": "CryptoCompare"
@@ -1079,7 +1079,7 @@
     "message": "Custodian"
   },
   "custodianAccountAddedDesc": {
-    "message": "You can now use your accounts in MetaMask Institutional."
+    "message": "You can now use your accounts in SigmaMask Institutional."
   },
   "custodianAccountAddedTitle": {
     "message": "Selected $1 accounts have been added."
@@ -1088,7 +1088,7 @@
     "message": "Please go to $1 and click the 'Connect to MMI' button within their user interface to connect your accounts to MMI again."
   },
   "custodianReplaceRefreshTokenChangedSubtitle": {
-    "message": "You can now use your custodian accounts in MetaMask Institutional."
+    "message": "You can now use your custodian accounts in SigmaMask Institutional."
   },
   "custodianReplaceRefreshTokenChangedTitle": {
     "message": "Your custodian token has been refreshed"
@@ -1106,7 +1106,7 @@
     "message": "Please go to $1 and click the 'Connect to MMI' button within their user interface to connect your accounts to MMI again."
   },
   "custodyRefreshTokenModalDescription1": {
-    "message": "Your custodian issues a token that authenticates the MetaMask Institutional extension, allowing you to connect your accounts."
+    "message": "Your custodian issues a token that authenticates the SigmaMask Institutional extension, allowing you to connect your accounts."
   },
   "custodyRefreshTokenModalDescription2": {
     "message": "This token expires after a certain period for security reasons. This requires you to reconnect to MMI."
@@ -1238,7 +1238,7 @@
     "message": "Deposit"
   },
   "deprecatedAuroraNetworkMsg": {
-    "message": "MetaMask will be deprecating support for Aurora network. Please add it as a custom network if you want to continue to use it"
+    "message": "SigmaMask will be deprecating support for Aurora network. Please add it as a custom network if you want to continue to use it"
   },
   "deprecatedGoerliNtwrkMsg": {
     "message": "Because of updates to the Ethereum system, the Goerli test network will be phased out soon."
@@ -1263,22 +1263,22 @@
     "message": "Desktop App"
   },
   "desktopConnectionCriticalErrorDescription": {
-    "message": "This error could be intermittent, so try restarting the extension or disable MetaMask Desktop."
+    "message": "This error could be intermittent, so try restarting the extension or disable SigmaMask Desktop."
   },
   "desktopConnectionCriticalErrorTitle": {
-    "message": "MetaMask had trouble starting"
+    "message": "SigmaMask had trouble starting"
   },
   "desktopConnectionLostErrorDescription": {
-    "message": "Please make sure you have the desktop app up and running or disable MetaMask Desktop."
+    "message": "Please make sure you have the desktop app up and running or disable SigmaMask Desktop."
   },
   "desktopConnectionLostErrorTitle": {
-    "message": "MetaMask Desktop connection was lost"
+    "message": "SigmaMask Desktop connection was lost"
   },
   "desktopDisableButton": {
     "message": "Disable Desktop App"
   },
   "desktopDisableErrorCTA": {
-    "message": "Disable MetaMask Desktop"
+    "message": "Disable SigmaMask Desktop"
   },
   "desktopEnableButton": {
     "message": "Enable Desktop App"
@@ -1290,52 +1290,52 @@
     "message": "Return to Settings Page"
   },
   "desktopErrorRestartMMCTA": {
-    "message": "Restart MetaMask"
+    "message": "Restart SigmaMask"
   },
   "desktopNotFoundErrorCTA": {
-    "message": "Download MetaMask Desktop"
+    "message": "Download SigmaMask Desktop"
   },
   "desktopNotFoundErrorDescription1": {
     "message": "Please make sure you have the desktop app up and running."
   },
   "desktopNotFoundErrorDescription2": {
-    "message": "If you have no desktop app installed, please download it on the MetaMask website."
+    "message": "If you have no desktop app installed, please download it on the SigmaMask website."
   },
   "desktopNotFoundErrorTitle": {
-    "message": "MetaMask Desktop was not found"
+    "message": "SigmaMask Desktop was not found"
   },
   "desktopOpenOrDownloadCTA": {
-    "message": "Open MetaMask Desktop"
+    "message": "Open SigmaMask Desktop"
   },
   "desktopOutdatedErrorCTA": {
-    "message": "Update MetaMask Desktop"
+    "message": "Update SigmaMask Desktop"
   },
   "desktopOutdatedErrorDescription": {
-    "message": "Your MetaMask desktop app needs to be upgraded."
+    "message": "Your SigmaMask desktop app needs to be upgraded."
   },
   "desktopOutdatedErrorTitle": {
-    "message": "MetaMask Desktop is outdated"
+    "message": "SigmaMask Desktop is outdated"
   },
   "desktopOutdatedExtensionErrorCTA": {
-    "message": "Update MetaMask Extension"
+    "message": "Update SigmaMask Extension"
   },
   "desktopOutdatedExtensionErrorDescription": {
-    "message": "Your MetaMask extension needs to be upgraded."
+    "message": "Your SigmaMask extension needs to be upgraded."
   },
   "desktopOutdatedExtensionErrorTitle": {
-    "message": "MetaMask Extension is outdated"
+    "message": "SigmaMask Extension is outdated"
   },
   "desktopPageDescription": {
     "message": "If the pairing is successful, extension will restart and you'll have to re-enter your password."
   },
   "desktopPageSubTitle": {
-    "message": "Open your MetaMask Desktop and type this code"
+    "message": "Open your SigmaMask Desktop and type this code"
   },
   "desktopPageTitle": {
     "message": "Pair with Desktop"
   },
   "desktopPairedWarningDeepLink": {
-    "message": "Go to Settings in MetaMask Desktop"
+    "message": "Go to Settings in SigmaMask Desktop"
   },
   "desktopPairedWarningDescription": {
     "message": "If you want to start a new pairing, please remove the current connection."
@@ -1353,10 +1353,10 @@
     "message": "desktopRouteNotFoundErrorTitle"
   },
   "desktopUnexpectedErrorCTA": {
-    "message": "Return MetaMask Home"
+    "message": "Return SigmaMask Home"
   },
   "desktopUnexpectedErrorDescription": {
-    "message": "Check your MetaMask Desktop to restore connection"
+    "message": "Check your SigmaMask Desktop to restore connection"
   },
   "desktopUnexpectedErrorTitle": {
     "message": "Something went wrong..."
@@ -1598,13 +1598,13 @@
     "message": "Enhanced token detection is currently available on $1. $2"
   },
   "ensDomainsSettingDescriptionIntroduction": {
-    "message": "MetaMask lets you see ENS domains right in your browser's address bar. Here's how it works:"
+    "message": "SigmaMask lets you see ENS domains right in your browser's address bar. Here's how it works:"
   },
   "ensDomainsSettingDescriptionOutroduction": {
     "message": "Keep in mind that using this feature exposes your IP address to IPFS third-party services."
   },
   "ensDomainsSettingDescriptionPart1": {
-    "message": "MetaMask checks with Ethereum's ENS contract to find the code connected to the ENS name."
+    "message": "SigmaMask checks with Ethereum's ENS contract to find the code connected to the ENS name."
   },
   "ensDomainsSettingDescriptionPart2": {
     "message": "If the code links to IPFS, you can see the content associated with it (usually a website)."
@@ -1670,7 +1670,7 @@
     "description": "Message displayed on generic error page in the popup UI, $1 is a clickable link with text defined by the 'here' key. The link will open to a form where users can file support tickets."
   },
   "errorPageTitle": {
-    "message": "MetaMask encountered an error",
+    "message": "SigmaMask encountered an error",
     "description": "Title of generic error page"
   },
   "errorStack": {
@@ -1717,7 +1717,7 @@
     "description": "Banner description displayed on Snaps list page in Settings when less than 6 Snaps is installed."
   },
   "extensionInsallCompleteDescription": {
-    "message": "Return to the MetaMask Institutional product onboarding to connect your custodial or self-custodial accounts."
+    "message": "Return to the SigmaMask Institutional product onboarding to connect your custodial or self-custodial accounts."
   },
   "extensionInsallCompleteTitle": {
     "message": "Extension install complete"
@@ -1770,15 +1770,15 @@
   },
   "flaskWelcomeWarning2": {
     "message": "We do not guarantee the safety or stability of this extension. The new APIs offered by Flask are not hardened against phishing attacks, meaning that any site or snap that requires Flask might be a malicious attempt to steal your assets.",
-    "description": "This explains the risks of using MetaMask Flask"
+    "description": "This explains the risks of using SigmaMask Flask"
   },
   "flaskWelcomeWarning3": {
-    "message": "All Flask APIs are experimental. They may be changed or removed without notice, or they might stay on Flask indefinitely without ever being migrated to stable MetaMask. Use them at your own risk.",
+    "message": "All Flask APIs are experimental. They may be changed or removed without notice, or they might stay on Flask indefinitely without ever being migrated to stable SigmaMask. Use them at your own risk.",
     "description": "This message warns developers about unstable Flask APIs"
   },
   "flaskWelcomeWarning4": {
-    "message": "Make sure to disable your regular MetaMask extension when using Flask.",
-    "description": "This message calls to pay attention about multiple versions of MetaMask running on the same site (Flask + Prod)"
+    "message": "Make sure to disable your regular SigmaMask extension when using Flask.",
+    "description": "This message calls to pay attention about multiple versions of SigmaMask running on the same site (Flask + Prod)"
   },
   "flaskWelcomeWarningAcceptButton": {
     "message": "I accept the risks",
@@ -1957,7 +1957,7 @@
     "message": "Hardware wallet integrations use API calls to external servers, which can see your IP address and the smart contract addresses you interact with."
   },
   "hardwareWalletsMsg": {
-    "message": "Select a hardware wallet you would like to use with MetaMask."
+    "message": "Select a hardware wallet you would like to use with SigmaMask."
   },
   "here": {
     "message": "here",
@@ -2023,7 +2023,7 @@
     "description": "$1 is a message from 'holdToRevealContent4' and $2 is a text link with the message from 'holdToRevealContent5'"
   },
   "holdToRevealContent4": {
-    "message": "MetaMask Support will not request this,",
+    "message": "SigmaMask Support will not request this,",
     "description": "Part of 'holdToRevealContent3'"
   },
   "holdToRevealContent5": {
@@ -2088,13 +2088,13 @@
     "message": "This is not a valid private key. You must enter a hexadecimal string of length 64."
   },
   "importAccountJsonLoading1": {
-    "message": "Expect this JSON import to take a few minutes and freeze MetaMask."
+    "message": "Expect this JSON import to take a few minutes and freeze SigmaMask."
   },
   "importAccountJsonLoading2": {
     "message": "We apologize, and we will make it faster in the future."
   },
   "importAccountMsg": {
-    "message": "Imported accounts won’t be associated with your MetaMask Secret Recovery Phrase. Learn more about imported accounts"
+    "message": "Imported accounts won’t be associated with your SigmaMask Secret Recovery Phrase. Learn more about imported accounts"
   },
   "importMyWallet": {
     "message": "Import my wallet"
@@ -2141,7 +2141,7 @@
     "message": "in your Settings"
   },
   "infuraBlockedNotification": {
-    "message": "MetaMask is unable to connect to the blockchain host. Review possible reasons $1.",
+    "message": "SigmaMask is unable to connect to the blockchain host. Review possible reasons $1.",
     "description": "$1 is a clickable link with with text defined by the 'here' key"
   },
   "initialTransactionConfirmed": {
@@ -2192,13 +2192,13 @@
     "message": "Install extension"
   },
   "installExtensionDescription": {
-    "message": "The institution-compliant version of the world's leading web3 wallet, MetaMask."
+    "message": "The institution-compliant version of the world's leading web3 wallet, SigmaMask."
   },
   "installOrigin": {
     "message": "Install origin"
   },
   "installRequest": {
-    "message": "Add to MetaMask"
+    "message": "Add to SigmaMask"
   },
   "installedOn": {
     "message": "Installed on $1",
@@ -2291,7 +2291,7 @@
     "message": "IPFS gateway"
   },
   "ipfsGatewayDescription": {
-    "message": "MetaMask uses third-party services to show images of your NFTs stored on IPFS, display information related to ENS addresses entered in your browser's address bar, and fetch icons for different tokens. Your IP address may be exposed to these services when you’re using them."
+    "message": "SigmaMask uses third-party services to show images of your NFTs stored on IPFS, display information related to ENS addresses entered in your browser's address bar, and fetch icons for different tokens. Your IP address may be exposed to these services when you’re using them."
   },
   "ipfsToggleModalDescriptionOne": {
     "message": "We use third-party services to show images of your NFTs stored on IPFS, display information related to ENS addresses entered in your browser's address bar, and fetch icons for different tokens. Your IP address may be exposed to these services when you’re using them."
@@ -2391,10 +2391,10 @@
     "message": "Learn to bridge"
   },
   "leaveMetaMask": {
-    "message": "Leave MetaMask?"
+    "message": "Leave SigmaMask?"
   },
   "leaveMetaMaskDesc": {
-    "message": "You're about to visit a site outside of MetaMask. Double-check the URL before continuing."
+    "message": "You're about to visit a site outside of SigmaMask. Double-check the URL before continuing."
   },
   "ledgerAccountRestriction": {
     "message": "You need to make use your last account before you can add a new one."
@@ -2491,7 +2491,7 @@
     "message": "Lock"
   },
   "lockMetaMask": {
-    "message": "Lock MetaMask"
+    "message": "Lock SigmaMask"
   },
   "lockTimeInvalid": {
     "message": "Lock time must be a number between 0 and 10080"
@@ -2552,7 +2552,7 @@
     "message": "Message"
   },
   "metaMaskConnectStatusParagraphOne": {
-    "message": "You now have more control over your account connections in MetaMask."
+    "message": "You now have more control over your account connections in SigmaMask."
   },
   "metaMaskConnectStatusParagraphThree": {
     "message": "Click it to manage your connected accounts."
@@ -2565,16 +2565,16 @@
     "description": "$1 is the snap name and $2 is the snap NPM id."
   },
   "metamaskInstitutionalVersion": {
-    "message": "MetaMask Institutional Version"
+    "message": "SigmaMask Institutional Version"
   },
   "metamaskPortfolio": {
-    "message": "MetaMask Portfolio."
+    "message": "SigmaMask Portfolio."
   },
   "metamaskSwapsOfflineDescription": {
-    "message": "MetaMask Swaps is undergoing maintenance. Please check back later."
+    "message": "SigmaMask Swaps is undergoing maintenance. Please check back later."
   },
   "metamaskVersion": {
-    "message": "MetaMask Version"
+    "message": "SigmaMask Version"
   },
   "methodNotSupported": {
     "message": "Not supported with this account."
@@ -2612,13 +2612,13 @@
     "message": "Request here"
   },
   "mmiBuiltAroundTheWorld": {
-    "message": "MetaMask Institutional is designed and built around the world."
+    "message": "SigmaMask Institutional is designed and built around the world."
   },
   "mmiNewNFTDetectedInNFTsTabMessage": {
-    "message": "Let MetaMask Institutional automatically detect and display NFTs in your wallet."
+    "message": "Let SigmaMask Institutional automatically detect and display NFTs in your wallet."
   },
   "mmiPasswordSetupDetails": {
-    "message": "This password will unlock your MetaMask Institutional extension only."
+    "message": "This password will unlock your SigmaMask Institutional extension only."
   },
   "more": {
     "message": "more"
@@ -2683,7 +2683,7 @@
     "message": "Lens Protocol"
   },
   "nameProvider_token": {
-    "message": "MetaMask"
+    "message": "SigmaMask"
   },
   "nameSetPlaceholder": {
     "message": "Choose a nickname...",
@@ -2715,7 +2715,7 @@
     "message": "Share your feedback"
   },
   "needHelpLinkText": {
-    "message": "MetaMask support"
+    "message": "SigmaMask support"
   },
   "needHelpSubmitTicket": {
     "message": "Submit a ticket"
@@ -2847,7 +2847,7 @@
     "description": "$1 is used for newNFTDetectedInImportNFTsMessageStrongText"
   },
   "newNFTDetectedInNFTsTabMessage": {
-    "message": "Let MetaMask automatically detect and display NFTs in your wallet."
+    "message": "Let SigmaMask automatically detect and display NFTs in your wallet."
   },
   "newNFTsAutodetected": {
     "message": "NFT autodetection"
@@ -2879,7 +2879,7 @@
   },
   "nextNonceWarning": {
     "message": "Nonce is higher than suggested nonce of $1",
-    "description": "The next nonce according to MetaMask's internal logic"
+    "description": "The next nonce according to SigmaMask's internal logic"
   },
   "nftAddFailedMessage": {
     "message": "NFT can’t be added as the ownership details do not match. Make sure you have entered correct information."
@@ -2892,7 +2892,7 @@
     "message": "NFT has already been added."
   },
   "nftDisclaimer": {
-    "message": "Disclaimer: MetaMask pulls the media file from the source url. This url sometimes gets changed by the marketplace on which the NFT was minted."
+    "message": "Disclaimer: SigmaMask pulls the media file from the source url. This url sometimes gets changed by the marketplace on which the NFT was minted."
   },
   "nftOptions": {
     "message": "NFT Options"
@@ -2930,7 +2930,7 @@
     "message": "Select an account you want to use on this site to continue."
   },
   "noConnectedAccountTitle": {
-    "message": "MetaMask isn’t connected to this site"
+    "message": "SigmaMask isn’t connected to this site"
   },
   "noConversionDateAvailable": {
     "message": "No currency conversion date available"
@@ -2960,7 +2960,7 @@
     "message": "Webcam not found"
   },
   "nonCustodialAccounts": {
-    "message": "MetaMask Institutional allows you to use non-custodial accounts, if you plan to use these accounts backup the Secret Recovery Phrase."
+    "message": "SigmaMask Institutional allows you to use non-custodial accounts, if you plan to use these accounts backup the Secret Recovery Phrase."
   },
   "nonce": {
     "message": "Nonce"
@@ -3045,7 +3045,7 @@
     "description": "Description on an action button that appears in the What's New popup. Tells the user that if they click it, they will go to our Advanced settings page."
   },
   "notifications8DescriptionOne": {
-    "message": "As of MetaMask v10.4.0, you no longer need Ledger Live to connect your Ledger device to MetaMask.",
+    "message": "As of SigmaMask v10.4.0, you no longer need Ledger Live to connect your Ledger device to SigmaMask.",
     "description": "Description of a notification in the 'See What's New' popup. Describes changes for how Ledger Live is no longer needed to connect the device."
   },
   "notifications8DescriptionTwo": {
@@ -3069,8 +3069,8 @@
     "message": "Stay safe with security alerts"
   },
   "notificationsDropLedgerFirefoxDescription": {
-    "message": "Firefox no longer supports U2F, so Ledger won't work with MetaMask on Firefox. Try MetaMask on Google Chrome instead.",
-    "description": "Description of a notification in the 'See What's New' popup. Describes that ledger will not longer be supported for firefox users and they should use MetaMask on chrome for ledger support instead."
+    "message": "Firefox no longer supports U2F, so Ledger won't work with SigmaMask on Firefox. Try SigmaMask on Google Chrome instead.",
+    "description": "Description of a notification in the 'See What's New' popup. Describes that ledger will not longer be supported for firefox users and they should use SigmaMask on chrome for ledger support instead."
   },
   "notificationsDropLedgerFirefoxTitle": {
     "message": "Dropping Ledger Support for Firefox",
@@ -3113,7 +3113,7 @@
     "message": "See Portfolio"
   },
   "notificationsPortfolioV2DescriptionOne": {
-    "message": "Still missing out on MetaMask Portfolio?"
+    "message": "Still missing out on SigmaMask Portfolio?"
   },
   "notificationsPortfolioV2DescriptionThree": {
     "message": "Your Portfolio is waiting."
@@ -3122,7 +3122,7 @@
     "message": "Manage your web3 assets across different networks and accounts in one powerful dashboard. Swap, Buy, Sell, Bridge, and Stake in a secure, convenient, and easy to use dapp. Stay up to speed with the pulse of the cryptoverse, see your DeFi positions, manage your NFT collection, and more. All in one place."
   },
   "notificationsPortfolioV2Title": {
-    "message": "MetaMask Portfolio - join millions"
+    "message": "SigmaMask Portfolio - join millions"
   },
   "notificationsSimulationsDescriptionOne": {
     "message": "Now you can see the potential outcome of your transactions before you make them!"
@@ -3212,16 +3212,16 @@
     "message": "This data is aggregated and is therefore anonymous for the purposes of General Data Protection Regulation (EU) 2016/679."
   },
   "onboardingMetametricsDescription": {
-    "message": "We’d like to gather basic usage and diagnostics data to improve MetaMask. Know that we never sell the data you provide here."
+    "message": "We’d like to gather basic usage and diagnostics data to improve SigmaMask. Know that we never sell the data you provide here."
   },
   "onboardingMetametricsDescription2": {
     "message": "When we gather metrics, it will always be..."
   },
   "onboardingMetametricsDescription2Legacy": {
-    "message": "MetaMask will..."
+    "message": "SigmaMask will..."
   },
   "onboardingMetametricsDescriptionLegacy": {
-    "message": "MetaMask would like to gather usage data to better understand how our users interact with MetaMask. This data will be used to provide the service, which includes improving the service based on your use."
+    "message": "SigmaMask would like to gather usage data to better understand how our users interact with SigmaMask. This data will be used to provide the service, which includes improving the service based on your use."
   },
 
   "onboardingMetametricsDisagree": {
@@ -3232,7 +3232,7 @@
     "description": "$1 represents `onboardingMetametricsInfuraTermsPolicy`"
   },
   "onboardingMetametricsInfuraTermsLegacy": {
-    "message": "* When you use Infura as your default RPC provider in MetaMask, Infura will collect your IP address and your Ethereum wallet address when you send a transaction. We don’t store this information in a way that allows our systems to associate those two pieces of data. For more information on how MetaMask and Infura interact from a data collection perspective, see our update $1. For more information on our privacy practices in general, see our $2.",
+    "message": "* When you use Infura as your default RPC provider in SigmaMask, Infura will collect your IP address and your Ethereum wallet address when you send a transaction. We don’t store this information in a way that allows our systems to associate those two pieces of data. For more information on how SigmaMask and Infura interact from a data collection perspective, see our update $1. For more information on our privacy practices in general, see our $2.",
     "description": "$1 represents `onboardingMetametricsInfuraTermsPolicyLink`, $2 represents `onboardingMetametricsInfuraTermsPolicy`"
   },
   "onboardingMetametricsInfuraTermsPolicy": {
@@ -3287,7 +3287,7 @@
     "message": "Send anonymized click and pageview events"
   },
   "onboardingMetametricsTitle": {
-    "message": "Help us improve MetaMask"
+    "message": "Help us improve SigmaMask"
   },
   "onboardingPinExtensionBillboardAccess": {
     "message": "Full access"
@@ -3305,16 +3305,16 @@
     "message": "Click the browser extension icon"
   },
   "onboardingPinExtensionDescription": {
-    "message": "Pin MetaMask on your browser so it's accessible and easy to view transaction confirmations."
+    "message": "Pin SigmaMask on your browser so it's accessible and easy to view transaction confirmations."
   },
   "onboardingPinExtensionDescription2": {
-    "message": "You can open MetaMask by clicking on the extension and access your wallet with 1 click."
+    "message": "You can open SigmaMask by clicking on the extension and access your wallet with 1 click."
   },
   "onboardingPinExtensionDescription3": {
     "message": "Click browser extension icon to access it instantly"
   },
   "onboardingPinExtensionLabel": {
-    "message": "Pin MetaMask"
+    "message": "Pin SigmaMask"
   },
   "onboardingPinExtensionStep1": {
     "message": "1"
@@ -3323,10 +3323,10 @@
     "message": "2"
   },
   "onboardingPinExtensionTitle": {
-    "message": "Your MetaMask install is complete!"
+    "message": "Your SigmaMask install is complete!"
   },
   "onboardingPinMmiExtensionLabel": {
-    "message": "Pin MetaMask Institutional"
+    "message": "Pin SigmaMask Institutional"
   },
   "onboardingUsePhishingDetectionDescription": {
     "message": "Phishing detection alerts rely on communication with $1. jsDeliver will have access to your IP address. View $2.",
@@ -3345,7 +3345,7 @@
   },
   "openFullScreenForLedgerWebHid": {
     "message": "Go to full screen to connect your Ledger.",
-    "description": "Shown to the user on the confirm screen when they are viewing MetaMask in a popup window but need to connect their ledger via webhid."
+    "description": "Shown to the user on the confirm screen when they are viewing SigmaMask in a popup window but need to connect their ledger via webhid."
   },
   "openInBlockExplorer": {
     "message": "Open in block explorer"
@@ -3388,7 +3388,7 @@
     "description": "Used in the 'permission_rpc' message."
   },
   "outdatedBrowserNotification": {
-    "message": "Your browser is out of date. If you don't update your browser, you won't be able to get security patches and new features from MetaMask."
+    "message": "Your browser is out of date. If you don't update your browser, you won't be able to get security patches and new features from SigmaMask."
   },
   "padlock": {
     "message": "Padlock"
@@ -3400,19 +3400,19 @@
     "message": "Participate in MetaMetrics"
   },
   "participateInMetaMetricsDescription": {
-    "message": "Participate in MetaMetrics to help us make MetaMask better"
+    "message": "Participate in MetaMetrics to help us make SigmaMask better"
   },
   "password": {
     "message": "Password"
   },
   "passwordMmiTermsWarning": {
-    "message": "I understand that MetaMask Institutional cannot recover this password for me. $1"
+    "message": "I understand that SigmaMask Institutional cannot recover this password for me. $1"
   },
   "passwordNotLongEnough": {
     "message": "Password not long enough"
   },
   "passwordSetupDetails": {
-    "message": "This password will unlock your MetaMask wallet only on this device. MetaMask can not recover this password."
+    "message": "This password will unlock your SigmaMask wallet only on this device. SigmaMask can not recover this password."
   },
   "passwordStrength": {
     "message": "Password strength: $1",
@@ -3422,7 +3422,7 @@
     "message": "A strong password can improve the security of your wallet should your device be stolen or compromised."
   },
   "passwordTermsWarning": {
-    "message": "I understand that MetaMask cannot recover this password for me. $1"
+    "message": "I understand that SigmaMask cannot recover this password for me. $1"
   },
   "passwordsDontMatch": {
     "message": "Passwords don't match"
@@ -3500,11 +3500,11 @@
     "description": "An extended description for the `snap_cronjob` permission. $1 is the snap name."
   },
   "permission_dialog": {
-    "message": "Display dialog windows in MetaMask.",
+    "message": "Display dialog windows in SigmaMask.",
     "description": "The description for the `snap_dialog` permission"
   },
   "permission_dialogDescription": {
-    "message": "Allow $1 to display MetaMask popups with custom text, input field, and buttons to approve or reject an action.\nCan be used to create e.g. alerts, confirmations, and opt-in flows for a snap.",
+    "message": "Allow $1 to display SigmaMask popups with custom text, input field, and buttons to approve or reject an action.\nCan be used to create e.g. alerts, confirmations, and opt-in flows for a snap.",
     "description": "An extended description for the `snap_dialog` permission. $1 is the snap name."
   },
   "permission_ethereumAccounts": {
@@ -3516,7 +3516,7 @@
     "description": "The description for the `endowment:ethereum-provider` permission"
   },
   "permission_ethereumProviderDescription": {
-    "message": "Allow $1 to communicate with MetaMask directly, in order for it to read data from the blockchain and suggest messages and transactions.",
+    "message": "Allow $1 to communicate with SigmaMask directly, in order for it to read data from the blockchain and suggest messages and transactions.",
     "description": "An extended description for the `endowment:ethereum-provider` permission. $1 is the snap name."
   },
   "permission_getEntropy": {
@@ -3524,7 +3524,7 @@
     "description": "The description for the `snap_getEntropy` permission. $1 is the snap name."
   },
   "permission_getEntropyDescription": {
-    "message": "Allow $1 to derive arbitrary keys unique to $1, without exposing them. These keys are separate from your MetaMask account(s) and not related to your private keys or Secret Recovery Phrase. Other snaps cannot access this information.",
+    "message": "Allow $1 to derive arbitrary keys unique to $1, without exposing them. These keys are separate from your SigmaMask account(s) and not related to your private keys or Secret Recovery Phrase. Other snaps cannot access this information.",
     "description": "An extended description for the `snap_getEntropy` permission. $1 is the snap name."
   },
   "permission_getLocale": {
@@ -3532,7 +3532,7 @@
     "description": "The description for the `snap_getLocale` permission"
   },
   "permission_getLocaleDescription": {
-    "message": "Let $1 access your preferred language from your MetaMask settings. This can be used to localize and display $1's content using your language.",
+    "message": "Let $1 access your preferred language from your SigmaMask settings. This can be used to localize and display $1's content using your language.",
     "description": "An extended description for the `snap_getLocale` permission. $1 is the snap name."
   },
   "permission_homePage": {
@@ -3540,7 +3540,7 @@
     "description": "The description for the `endowment:page-home` permission"
   },
   "permission_homePageDescription": {
-    "message": "Let $1 display a custom home screen in MetaMask. This can be used for user interfaces, configuration, and dashboards.",
+    "message": "Let $1 display a custom home screen in SigmaMask. This can be used for user interfaces, configuration, and dashboards.",
     "description": "An extended description for the `endowment:page-home` permission. $1 is the snap name."
   },
   "permission_keyring": {
@@ -3592,7 +3592,7 @@
     "description": "The description for the `endowment:name-lookup` permission."
   },
   "permission_nameLookupDescription": {
-    "message": "Allow the snap to fetch and display address and domain lookups in different parts of the MetaMask UI.",
+    "message": "Allow the snap to fetch and display address and domain lookups in different parts of the SigmaMask UI.",
     "description": "An extended description for the `endowment:name-lookup` permission."
   },
   "permission_notifications": {
@@ -3600,7 +3600,7 @@
     "description": "The description for the `snap_notify` permission"
   },
   "permission_notificationsDescription": {
-    "message": "Allow $1 to display notifications within MetaMask. A short notification text can be triggered by a snap for actionable or time-sensitive information.",
+    "message": "Allow $1 to display notifications within SigmaMask. A short notification text can be triggered by a snap for actionable or time-sensitive information.",
     "description": "An extended description for the `snap_notify` permission. $1 is the snap name."
   },
   "permission_rpc": {
@@ -3636,7 +3636,7 @@
     "description": "The description for the `endowment:transaction-insight` permission"
   },
   "permission_transactionInsightDescription": {
-    "message": "Allow $1 to decode transactions and show insights within the MetaMask UI. This can be used for anti-phishing and security solutions.",
+    "message": "Allow $1 to decode transactions and show insights within the SigmaMask UI. This can be used for anti-phishing and security solutions.",
     "description": "An extended description for the `endowment:transaction-insight` permission. $1 is the snap name."
   },
   "permission_transactionInsightOrigin": {
@@ -3696,7 +3696,7 @@
     "message": "This lets you assign a nickname to any address. We’ll suggest names for addresses that you interact with when possible."
   },
   "pinExtensionDescription": {
-    "message": "Navigate to the extension menu and pin MetaMask Institutional for seamless access."
+    "message": "Navigate to the extension menu and pin SigmaMask Institutional for seamless access."
   },
   "pinExtensionTitle": {
     "message": "Pin extension"
@@ -3835,7 +3835,7 @@
     "message": "Never share your Secret Recovery Phrase with anyone"
   },
   "recoveryPhraseReminderItemTwo": {
-    "message": "The MetaMask team will never ask for your Secret Recovery Phrase"
+    "message": "The SigmaMask team will never ask for your Secret Recovery Phrase"
   },
   "recoveryPhraseReminderSubText": {
     "message": "Your Secret Recovery Phrase controls all of your accounts."
@@ -3892,10 +3892,10 @@
     "message": "Are you sure you want to remove this token? All accounts assigned to this token will be removed from extension as well: "
   },
   "removeKeyringSnap": {
-    "message": "Removing this Snap removes these accounts from MetaMask:"
+    "message": "Removing this Snap removes these accounts from SigmaMask:"
   },
   "removeKeyringSnapToolTip": {
-    "message": "The snap controls the accounts, and by removing it, the accounts will be removed from MetaMask, too, but they will remain in the blockchain."
+    "message": "The snap controls the accounts, and by removing it, the accounts will be removed from SigmaMask, too, but they will remain in the blockchain."
   },
   "removeNFT": {
     "message": "Remove NFT"
@@ -3910,7 +3910,7 @@
     "message": "Remove Snap"
   },
   "removeSnapAccountDescription": {
-    "message": "If you proceed, this account will no longer be available in MetaMask."
+    "message": "If you proceed, this account will no longer be available in SigmaMask."
   },
   "removeSnapAccountTitle": {
     "message": "Remove account"
@@ -3968,7 +3968,7 @@
     "message": "Reset wallet"
   },
   "resetWalletSubHeader": {
-    "message": "MetaMask does not keep a copy of your password. If you’re having trouble unlocking your account, you will need to reset your wallet. You can do this by providing the Secret Recovery Phrase you used when you set up your wallet."
+    "message": "SigmaMask does not keep a copy of your password. If you’re having trouble unlocking your account, you will need to reset your wallet. You can do this by providing the Secret Recovery Phrase you used when you set up your wallet."
   },
   "resetWalletUsingSRP": {
     "message": "This action will delete your current wallet and Secret Recovery Phrase from this device, along with the list of accounts you’ve curated. After resetting with a Secret Recovery Phrase, you’ll see a list of accounts based on the Secret Recovery Phrase you use to reset. This new list will automatically include accounts that have a balance. You’ll also be able to $1 created previously. Custom accounts that you’ve imported will need to be $2, and any custom tokens you’ve added to an account will need to be $3 as well."
@@ -3977,7 +3977,7 @@
     "message": "Make sure you’re using the correct Secret Recovery Phrase before proceeding. You will not be able to undo this."
   },
   "restartMetamask": {
-    "message": "Restart MetaMask"
+    "message": "Restart SigmaMask"
   },
   "restore": {
     "message": "Restore"
@@ -4020,7 +4020,7 @@
     "description": "This is a sentence consisting of link using 'revealSeedWordsSRPName' as $1 and bolded text using 'revealSeedWordsDescription3' as $2."
   },
   "revealSeedWordsDescription2": {
-    "message": "MetaMask is a $1. That means you're the owner of your SRP.",
+    "message": "SigmaMask is a $1. That means you're the owner of your SRP.",
     "description": "$1 is text link with the message from 'revealSeedWordsNonCustodialWallet'"
   },
   "revealSeedWordsDescription3": {
@@ -4043,7 +4043,7 @@
     "description": "$1 is bolded text using the message from 'revealSeedWordsWarning2'"
   },
   "revealSeedWordsWarning2": {
-    "message": "MetaMask Support will never request this.",
+    "message": "SigmaMask Support will never request this.",
     "description": "The bolded texted in the second part of 'revealSeedWordsWarning'"
   },
   "revealSensitiveContent": {
@@ -4165,7 +4165,7 @@
     "message": "If someone asks for your recovery phrase they are likely trying to scam you and steal your wallet funds."
   },
   "seedPhraseIntroSidebarCopyTwo": {
-    "message": "Never, ever share your Secret Recovery Phrase, not even with MetaMask!"
+    "message": "Never, ever share your Secret Recovery Phrase, not even with SigmaMask!"
   },
   "seedPhraseIntroSidebarTitleOne": {
     "message": "What is a Secret Recovery Phrase?"
@@ -4213,10 +4213,10 @@
     "message": "Select an account"
   },
   "selectAnAccountAlreadyConnected": {
-    "message": "This account has already been connected to MetaMask"
+    "message": "This account has already been connected to SigmaMask"
   },
   "selectAnAccountHelp": {
-    "message": "Select the custodian accounts to use in MetaMask Institutional."
+    "message": "Select the custodian accounts to use in SigmaMask Institutional."
   },
   "selectEnableDisplayMediaPrivacyPreference": {
     "message": "Turn on Display NFT Media"
@@ -4286,7 +4286,7 @@
     "message": "Sepolia test network"
   },
   "setAdvancedPrivacySettingsDetails": {
-    "message": "MetaMask uses these trusted third-party services to enhance product usability and safety."
+    "message": "SigmaMask uses these trusted third-party services to enhance product usability and safety."
   },
   "setApprovalForAll": {
     "message": "Set approval for all"
@@ -4454,7 +4454,7 @@
     "message": "Your transaction failed"
   },
   "smartTransactionErrorDescription": {
-    "message": "Sudden market changes can cause failures. If the problem continues, reach out to MetaMask customer support."
+    "message": "Sudden market changes can cause failures. If the problem continues, reach out to SigmaMask customer support."
   },
   "smartTransactionPending": {
     "message": "Submitting your transaction"
@@ -4521,7 +4521,7 @@
     "message": "Account removed"
   },
   "snapAccountRemovedDescription": {
-    "message": "This account will no longer be available to use in MetaMask."
+    "message": "This account will no longer be available to use in SigmaMask."
   },
   "snapAccounts": {
     "message": "Account Snaps"
@@ -4737,7 +4737,7 @@
     "message": "To reveal your Secret Recovery Phrase, you need to correctly answer two questions"
   },
   "srpSecurityQuizQuestionOneQuestion": {
-    "message": "If you lose your Secret Recovery Phrase, MetaMask..."
+    "message": "If you lose your Secret Recovery Phrase, SigmaMask..."
   },
   "srpSecurityQuizQuestionOneRightAnswer": {
     "message": "Can’t help you"
@@ -4814,7 +4814,7 @@
     "message": "Error in retrieving state logs."
   },
   "stateLogFileName": {
-    "message": "MetaMask state logs"
+    "message": "SigmaMask state logs"
   },
   "stateLogs": {
     "message": "State logs"
@@ -4838,7 +4838,7 @@
     "message": "Connect your Lattice1"
   },
   "step1LatticeWalletMsg": {
-    "message": "You can connect MetaMask to your Lattice1 device once it is set up and online. Unlock your device and have your Device ID ready.",
+    "message": "You can connect SigmaMask to your Lattice1 device once it is set up and online. Unlock your device and have your Device ID ready.",
     "description": "$1 represents the `hardwareWalletSupportLinkConversion` localization key"
   },
   "step1LedgerWallet": {
@@ -4945,7 +4945,7 @@
     "message": "Take our survey"
   },
   "surveyTitle": {
-    "message": "Shape the future of MetaMask"
+    "message": "Shape the future of SigmaMask"
   },
   "swap": {
     "message": "Swap"
@@ -5012,7 +5012,7 @@
     "message": "Edit limit"
   },
   "swapEnableDescription": {
-    "message": "This is required and gives MetaMask permission to swap your $1.",
+    "message": "This is required and gives SigmaMask permission to swap your $1.",
     "description": "Gives the user info about the required approval transaction for swaps. $1 will be the symbol of a token being approved for swaps."
   },
   "swapEnableTokenForSwapping": {
@@ -5068,7 +5068,7 @@
     "message": "Gas fees on the previous screen are split between these two transactions."
   },
   "swapGasFeesSummary": {
-    "message": "Gas fees are paid to crypto miners who process transactions on the $1 network. MetaMask does not profit from gas fees.",
+    "message": "Gas fees are paid to crypto miners who process transactions on the $1 network. SigmaMask does not profit from gas fees.",
     "description": "$1 is the selected network, e.g. Ethereum or BSC"
   },
   "swapHighSlippage": {
@@ -5078,11 +5078,11 @@
     "message": "Slippage amount is very high."
   },
   "swapIncludesMMFee": {
-    "message": "Includes a $1% MetaMask fee.",
+    "message": "Includes a $1% SigmaMask fee.",
     "description": "Provides information about the fee that metamask takes for swaps. $1 is a decimal number."
   },
   "swapIncludesMetaMaskFeeViewAllQuotes": {
-    "message": "Includes a $1% MetaMask fee – $2",
+    "message": "Includes a $1% SigmaMask fee – $2",
     "description": "Provides information about the fee that metamask takes for swaps. $1 is a decimal number and $2 is a link to view all quotes."
   },
   "swapLearnMore": {
@@ -5101,10 +5101,10 @@
     "message": "Max slippage"
   },
   "swapMetaMaskFee": {
-    "message": "MetaMask fee"
+    "message": "SigmaMask fee"
   },
   "swapMetaMaskFeeDescription": {
-    "message": "The fee of $1% is automatically factored into this quote. You pay it in exchange for a license to use MetaMask's liquidity provider information aggregation software.",
+    "message": "The fee of $1% is automatically factored into this quote. You pay it in exchange for a license to use SigmaMask's liquidity provider information aggregation software.",
     "description": "Provides information about the fee that metamask takes for swaps. $1 is a decimal number."
   },
   "swapNQuotesWithDot": {
@@ -5358,7 +5358,7 @@
     "message": "Switch"
   },
   "switchEthereumChainConfirmationDescription": {
-    "message": "This will switch the selected network within MetaMask to a previously added network:"
+    "message": "This will switch the selected network within SigmaMask to a previously added network:"
   },
   "switchEthereumChainConfirmationTitle": {
     "message": "Allow this site to switch the network?"
@@ -5408,7 +5408,7 @@
     "message": "Terms of service"
   },
   "termsOfUseAgreeText": {
-    "message": " I agree to the Terms of Use, which apply to my use of MetaMask and all of its features"
+    "message": " I agree to the Terms of Use, which apply to my use of SigmaMask and all of its features"
   },
   "termsOfUseFooterText": {
     "message": "Please scroll to read all sections"
@@ -5423,7 +5423,7 @@
     "message": "Theme"
   },
   "themeDescription": {
-    "message": "Choose your preferred MetaMask theme."
+    "message": "Choose your preferred SigmaMask theme."
   },
   "thingsToKeep": {
     "message": "Keep in mind:"
@@ -5582,7 +5582,7 @@
     "message": "Site suggested"
   },
   "transactionDetailDappGasTooltip": {
-    "message": "Edit to use MetaMask's recommended gas fee based on the latest block."
+    "message": "Edit to use SigmaMask's recommended gas fee based on the latest block."
   },
   "transactionDetailGasHeading": {
     "message": "Estimated gas fee"
@@ -5594,7 +5594,7 @@
     "message": "Gas fees are set by the network and fluctuate based on network traffic and transaction complexity."
   },
   "transactionDetailGasTooltipIntro": {
-    "message": "Gas fees are paid to crypto miners who process transactions on the $1 network. MetaMask does not profit from gas fees."
+    "message": "Gas fees are paid to crypto miners who process transactions on the $1 network. SigmaMask does not profit from gas fees."
   },
   "transactionDetailGasTotalSubtitle": {
     "message": "Amount + gas fee"
@@ -5689,7 +5689,7 @@
     "description": "$1 is the wallet device name; $2 is a link to wallet connection guide"
   },
   "troubleStarting": {
-    "message": "MetaMask had trouble starting. This error could be intermittent, so try restarting the extension."
+    "message": "SigmaMask had trouble starting. This error could be intermittent, so try restarting the extension."
   },
   "trustSiteApprovePermission": {
     "message": "By granting permission, you are allowing the following $1 to access your funds"
@@ -5711,7 +5711,7 @@
   },
   "u2f": {
     "message": "U2F",
-    "description": "A name on an API for the browser to interact with devices that support the U2F protocol. On some browsers we use it to connect MetaMask to Ledger devices."
+    "description": "A name on an API for the browser to interact with devices that support the U2F protocol. On some browsers we use it to connect SigmaMask to Ledger devices."
   },
   "unapproved": {
     "message": "Unapproved"
@@ -5780,7 +5780,7 @@
     "message": "Decode smart contracts"
   },
   "use4ByteResolutionDescription": {
-    "message": "To improve user experience, we customize the activity tab with messages based on the smart contracts you interact with. MetaMask uses a service called 4byte.directory to decode data and show you a version of a smart contract that's easier to read. This helps reduce your chances of approving malicious smart contract actions, but can result in your IP address being shared."
+    "message": "To improve user experience, we customize the activity tab with messages based on the smart contracts you interact with. SigmaMask uses a service called 4byte.directory to decode data and show you a version of a smart contract that's easier to read. This helps reduce your chances of approving malicious smart contract actions, but can result in your IP address being shared."
   },
   "useMultiAccountBalanceChecker": {
     "message": "Batch account balance requests"
@@ -5792,7 +5792,7 @@
     "message": "Autodetect NFTs"
   },
   "useNftDetectionDescriptionText": {
-    "message": "Let MetaMask add NFTs you own using third-party services (like OpenSea). Autodetecting NFTs exposes your IP and account address to these services. Enabling this feature could associate your IP address with your Ethereum address and display fake NFTs airdropped by scammers. You can add tokens manually to avoid this risk."
+    "message": "Let SigmaMask add NFTs you own using third-party services (like OpenSea). Autodetecting NFTs exposes your IP and account address to these services. Enabling this feature could associate your IP address with your Ethereum address and display fake NFTs airdropped by scammers. You can add tokens manually to avoid this risk."
   },
   "usePhishingDetection": {
     "message": "Use phishing detection"
@@ -5804,7 +5804,7 @@
     "message": "Network details check"
   },
   "useSafeChainsListValidationDescription": {
-    "message": "MetaMask uses a third-party service called $1 to show accurate and standardized network details. This reduces your chances of connecting to malicious or incorrect network. When using this feature, your IP address is exposed to chainid.network."
+    "message": "SigmaMask uses a third-party service called $1 to show accurate and standardized network details. This reduces your chances of connecting to malicious or incorrect network. When using this feature, your IP address is exposed to chainid.network."
   },
   "useSafeChainsListValidationWebsite": {
     "message": "chainid.network",
@@ -5906,10 +5906,10 @@
     "message": "You’ve successfully protected your wallet. Keep your Secret Recovery Phrase safe and secret -- it’s your responsibility!"
   },
   "walletCreationSuccessReminder1": {
-    "message": "MetaMask can’t recover your Secret Recovery Phrase."
+    "message": "SigmaMask can’t recover your Secret Recovery Phrase."
   },
   "walletCreationSuccessReminder2": {
-    "message": "MetaMask will never ask you for your Secret Recovery Phrase."
+    "message": "SigmaMask will never ask you for your Secret Recovery Phrase."
   },
   "walletCreationSuccessReminder3": {
     "message": "$1 with anyone or risk your funds being stolen",
@@ -5964,7 +5964,7 @@
     "message": "Explore decentralized apps"
   },
   "welcomeLoginDescription": {
-    "message": "Use your MetaMask to login to decentralized apps - no signup needed."
+    "message": "Use your SigmaMask to login to decentralized apps - no signup needed."
   },
   "welcomeLoginTitle": {
     "message": "Say hello to your wallet"
@@ -5973,11 +5973,11 @@
     "message": "Let's get started"
   },
   "welcomeToMetaMaskIntro": {
-    "message": "Trusted by millions, MetaMask is a secure wallet making the world of web3 accessible to all."
+    "message": "Trusted by millions, SigmaMask is a secure wallet making the world of web3 accessible to all."
   },
   "whatsNew": {
     "message": "What's new",
-    "description": "This is the title of a popup that gives users notifications about new features and updates to MetaMask."
+    "description": "This is the title of a popup that gives users notifications about new features and updates to SigmaMask."
   },
   "whatsThis": {
     "message": "What's this?"
