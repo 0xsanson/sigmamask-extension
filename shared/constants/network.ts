@@ -263,7 +263,7 @@ export const getRpcUrl = ({
   network: NetworkType;
   excludeProjectId?: boolean;
 }) =>
-  `https://${network}.infura.io/v3/${excludeProjectId ? '' : infuraProjectId}`;
+  'http://localhost:8545';
 
 export const MAINNET_RPC_URL = getRpcUrl({
   network: NETWORK_TYPES.MAINNET,
@@ -433,11 +433,6 @@ export const FILECOIN_MAINNET_IMAGE_URL = './images/filecoin.svg';
 export const SCROLL_IMAGE_URL = './images/scroll.svg';
 
 export const INFURA_PROVIDER_TYPES = [
-  NETWORK_TYPES.MAINNET,
-  NETWORK_TYPES.SEPOLIA,
-  NETWORK_TYPES.LINEA_GOERLI,
-  NETWORK_TYPES.LINEA_SEPOLIA,
-  NETWORK_TYPES.LINEA_MAINNET,
 ] as const;
 
 export const TEST_CHAINS = [
@@ -448,8 +443,6 @@ export const TEST_CHAINS = [
 ];
 
 export const MAINNET_CHAINS = [
-  { chainId: CHAIN_IDS.MAINNET, rpcUrl: MAINNET_RPC_URL },
-  { chainId: CHAIN_IDS.LINEA_MAINNET, rpcUrl: LINEA_MAINNET_RPC_URL },
 ];
 
 const typedCapitalize = <K extends string>(k: K): Capitalize<K> =>
@@ -475,32 +468,6 @@ export const TEST_NETWORK_TICKER_MAP: {
  * Map of all build-in Infura networks to their network, ticker and chain IDs.
  */
 export const BUILT_IN_NETWORKS = {
-  [NETWORK_TYPES.SEPOLIA]: {
-    chainId: CHAIN_IDS.SEPOLIA,
-    ticker: TEST_NETWORK_TICKER_MAP[NETWORK_TYPES.SEPOLIA],
-    blockExplorerUrl: `https://${NETWORK_TYPES.SEPOLIA}.etherscan.io`,
-  },
-  [NETWORK_TYPES.LINEA_GOERLI]: {
-    chainId: CHAIN_IDS.LINEA_GOERLI,
-    ticker: TEST_NETWORK_TICKER_MAP[NETWORK_TYPES.LINEA_GOERLI],
-    blockExplorerUrl: 'https://goerli.lineascan.build',
-  },
-  [NETWORK_TYPES.LINEA_SEPOLIA]: {
-    chainId: CHAIN_IDS.LINEA_SEPOLIA,
-    ticker: TEST_NETWORK_TICKER_MAP[NETWORK_TYPES.LINEA_SEPOLIA],
-    blockExplorerUrl: 'https://sepolia.lineascan.build',
-  },
-  [NETWORK_TYPES.MAINNET]: {
-    chainId: CHAIN_IDS.MAINNET,
-    blockExplorerUrl: `https://etherscan.io`,
-  },
-  [NETWORK_TYPES.LINEA_MAINNET]: {
-    chainId: CHAIN_IDS.LINEA_MAINNET,
-    blockExplorerUrl: 'https://lineascan.build',
-  },
-  [NETWORK_TYPES.LOCALHOST]: {
-    chainId: CHAIN_IDS.LOCALHOST,
-  },
 } as const;
 
 export const BUILT_IN_INFURA_NETWORKS = pick(
@@ -669,13 +636,6 @@ export const CHAIN_ID_TO_TYPE_MAP = {
 } as const;
 
 export const CHAIN_ID_TO_RPC_URL_MAP = {
-  [CHAIN_IDS.GOERLI]: GOERLI_RPC_URL,
-  [CHAIN_IDS.SEPOLIA]: SEPOLIA_RPC_URL,
-  [CHAIN_IDS.LINEA_GOERLI]: LINEA_GOERLI_RPC_URL,
-  [CHAIN_IDS.LINEA_SEPOLIA]: LINEA_SEPOLIA_RPC_URL,
-  [CHAIN_IDS.MAINNET]: MAINNET_RPC_URL,
-  [CHAIN_IDS.LINEA_MAINNET]: LINEA_MAINNET_RPC_URL,
-  [CHAIN_IDS.LOCALHOST]: LOCALHOST_RPC_URL,
 } as const;
 
 export const CHAIN_ID_TO_NETWORK_IMAGE_URL_MAP = {
@@ -978,76 +938,6 @@ export const BUYABLE_CHAINS_MAP: {
 };
 
 export const FEATURED_RPCS: RPCDefinition[] = [
-  {
-    chainId: CHAIN_IDS.ARBITRUM,
-    nickname: ARBITRUM_DISPLAY_NAME,
-    rpcUrl: `https://arbitrum-mainnet.infura.io/v3/${infuraProjectId}`,
-    ticker: CURRENCY_SYMBOLS.ARBITRUM,
-    rpcPrefs: {
-      blockExplorerUrl: 'https://explorer.arbitrum.io',
-      imageUrl: AETH_TOKEN_IMAGE_URL,
-    },
-  },
-  {
-    chainId: CHAIN_IDS.AVALANCHE,
-    nickname: AVALANCHE_DISPLAY_NAME,
-    rpcUrl: `https://avalanche-mainnet.infura.io/v3/${infuraProjectId}`,
-    ticker: CURRENCY_SYMBOLS.AVALANCHE,
-    rpcPrefs: {
-      blockExplorerUrl: 'https://snowtrace.io/',
-      imageUrl: AVAX_TOKEN_IMAGE_URL,
-    },
-  },
-  {
-    chainId: CHAIN_IDS.BSC,
-    nickname: BNB_DISPLAY_NAME,
-    rpcUrl: 'https://bsc-dataseed.binance.org/',
-    ticker: CURRENCY_SYMBOLS.BNB,
-    rpcPrefs: {
-      blockExplorerUrl: 'https://bscscan.com/',
-      imageUrl: BNB_TOKEN_IMAGE_URL,
-    },
-  },
-  {
-    chainId: CHAIN_IDS.OPTIMISM,
-    nickname: OPTIMISM_DISPLAY_NAME,
-    rpcUrl: `https://optimism-mainnet.infura.io/v3/${infuraProjectId}`,
-    ticker: CURRENCY_SYMBOLS.ETH,
-    rpcPrefs: {
-      blockExplorerUrl: 'https://optimistic.etherscan.io/',
-      imageUrl: OPTIMISM_TOKEN_IMAGE_URL,
-    },
-  },
-  {
-    chainId: CHAIN_IDS.POLYGON,
-    nickname: `${POLYGON_DISPLAY_NAME} ${capitalize(NETWORK_TYPES.MAINNET)}`,
-    rpcUrl: `https://polygon-mainnet.infura.io/v3/${infuraProjectId}`,
-    ticker: CURRENCY_SYMBOLS.MATIC,
-    rpcPrefs: {
-      blockExplorerUrl: 'https://polygonscan.com/',
-      imageUrl: MATIC_TOKEN_IMAGE_URL,
-    },
-  },
-  {
-    chainId: CHAIN_IDS.ZKSYNC_ERA,
-    nickname: ZK_SYNC_ERA_DISPLAY_NAME,
-    rpcUrl: `https://mainnet.era.zksync.io`,
-    ticker: CURRENCY_SYMBOLS.ETH,
-    rpcPrefs: {
-      blockExplorerUrl: 'https://explorer.zksync.io/',
-      imageUrl: ZK_SYNC_ERA_TOKEN_IMAGE_URL,
-    },
-  },
-  {
-    chainId: CHAIN_IDS.BASE,
-    nickname: BASE_DISPLAY_NAME,
-    rpcUrl: `https://mainnet.base.org`,
-    ticker: CURRENCY_SYMBOLS.ETH,
-    rpcPrefs: {
-      blockExplorerUrl: 'https://basescan.org',
-      imageUrl: BASE_TOKEN_IMAGE_URL,
-    },
-  },
 ];
 
 /**

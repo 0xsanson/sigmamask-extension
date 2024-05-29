@@ -255,7 +255,7 @@ const mapStateToProps = (state, ownProps) => {
   );
   const custodianPublishesTransaction =
     getIsCustodianPublishesTransactionSupported(state, fromChecksumHexAddress);
-  const builtinRpcUrl = CHAIN_ID_TO_RPC_URL_MAP[chainId];
+  const builtinRpcUrl = undefined; // CHAIN_ID_TO_RPC_URL_MAP[chainId];
   const { rpcUrl: customRpcUrl } = getProviderConfig(state);
 
   const rpcUrl = customRpcUrl || builtinRpcUrl;
