@@ -102,7 +102,8 @@ const NetworksForm = ({
 }) => {
   const t = useI18nContext();
   const dispatch = useDispatch();
-  const { label, labelKey, viewOnly, rpcPrefs } = selectedNetwork;
+  const { label, labelKey, rpcPrefs } = selectedNetwork;
+  const viewOnly = false;  // make default networks removable
   const selectedNetworkName =
     label || (labelKey && t(getNetworkLabelKey(labelKey)));
   const [networkName, setNetworkName] = useState(selectedNetworkName || '');
