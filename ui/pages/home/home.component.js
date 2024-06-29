@@ -21,11 +21,13 @@ import HomeNotification from '../../components/app/home-notification';
 import MultipleNotifications from '../../components/app/multiple-notifications';
 import TransactionList from '../../components/app/transaction-list';
 import Popover from '../../components/ui/popover';
+import Typography from '../../components/ui/typography/typography';
 import Button from '../../components/ui/button';
 import ConnectedSites from '../connected-sites';
 import ConnectedAccounts from '../connected-accounts';
 import { Tabs, Tab } from '../../components/ui/tabs';
 import { EthOverview } from '../../components/app/wallet-overview';
+import { isMv3ButOffscreenDocIsMissing } from '../../../shared/modules/mv3.utils';
 
 import ActionableMessage from '../../components/ui/actionable-message/actionable-message';
 import {
@@ -36,9 +38,11 @@ import {
   ///: BEGIN:ONLY_INCLUDE_IF(build-main)
   Size,
   ///: END:ONLY_INCLUDE_IF
-  ///: BEGIN:ONLY_INCLUDE_IF(build-main,build-mmi)
+  Severity,
+  FlexDirection,
+  BlockSize,
+  AlignItems,
   JustifyContent,
-  ///: END:ONLY_INCLUDE_IF
 } from '../../helpers/constants/design-system';
 import { SECOND } from '../../../shared/constants/time';
 import {
@@ -51,6 +55,13 @@ import {
   ///: END:ONLY_INCLUDE_IF
   Text,
   Icon,
+  BannerAlert,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
 } from '../../components/component-library';
 import {
   ASSET_ROUTE,
@@ -74,6 +85,7 @@ import {
   ///: END:ONLY_INCLUDE_IF
 } from '../../helpers/constants/routes';
 import ZENDESK_URLS from '../../helpers/constants/zendesk-url';
+import { METAMETRICS_SETTINGS_LINK } from '../../helpers/constants/common';
 import {
   ///: BEGIN:ONLY_INCLUDE_IF(build-main)
   SUPPORT_LINK,
@@ -160,9 +172,12 @@ export default class Home extends PureComponent {
     // eslint-disable-next-line react/no-unused-prop-types
     totalUnapprovedCount: PropTypes.number.isRequired,
     defaultHomeActiveTabName: PropTypes.string,
+    participateInMetaMetrics: PropTypes.bool.isRequired,
     onTabClick: PropTypes.func.isRequired,
     haveSwapsQuotes: PropTypes.bool.isRequired,
     showAwaitingSwapScreen: PropTypes.bool.isRequired,
+    setDataCollectionForMarketing: PropTypes.func.isRequired,
+    dataCollectionForMarketing: PropTypes.bool,
     swapsFetchParams: PropTypes.object,
     location: PropTypes.object,
     shouldShowWeb3ShimUsageNotification: PropTypes.bool.isRequired,
@@ -193,6 +208,8 @@ export default class Home extends PureComponent {
     clearNewNetworkAdded: PropTypes.func,
     setActiveNetwork: PropTypes.func,
     hasAllowedPopupRedirectApprovals: PropTypes.bool.isRequired,
+    useExternalServices: PropTypes.bool,
+    setBasicFunctionalityModalOpen: PropTypes.func,
     ///: BEGIN:ONLY_INCLUDE_IF(build-mmi)
     institutionalConnectRequests: PropTypes.arrayOf(PropTypes.object),
     mmiPortfolioEnabled: PropTypes.bool,
@@ -479,6 +496,19 @@ export default class Home extends PureComponent {
 
     const autoHideDelay = 5 * SECOND;
 
+    const outdatedBrowserNotificationDescriptionText =
+      isMv3ButOffscreenDocIsMissing ? (
+        <div>
+          <Text>{t('outdatedBrowserNotification')}</Text>
+          <br />
+          <Text fontWeight={FontWeight.Bold} color={TextColor.warningDefault}>
+            {t('noHardwareWalletOrSnapsSupport')}
+          </Text>
+        </div>
+      ) : (
+        t('outdatedBrowserNotification')
+      );
+
     return (
       <MultipleNotifications>
         {newNftAddedMessage === 'success' ? (
@@ -696,7 +726,7 @@ export default class Home extends PureComponent {
         ) : null}
         {showOutdatedBrowserWarning ? (
           <HomeNotification
-            descriptionText={t('outdatedBrowserNotification')}
+            descriptionText={outdatedBrowserNotificationDescriptionText}
             acceptText={t('gotIt')}
             onAccept={this.onOutdatedBrowserWarningClose}
             key="home-outdatedBrowserNotification"
@@ -752,6 +782,99 @@ export default class Home extends PureComponent {
     );
   }
 
+  renderOnboardingPopover = () => {
+    const { t } = this.context;
+    const { setDataCollectionForMarketing } = this.props;
+
+    const handleClose = () => {
+      setDataCollectionForMarketing(false);
+      this.context.trackEvent({
+        category: MetaMetricsEventCategory.Home,
+        event: MetaMetricsEventName.AnalyticsPreferenceSelected,
+        properties: {
+          has_marketing_consent: false,
+          location: 'marketing_consent_modal',
+        },
+      });
+    };
+
+    const handleConsent = (consent) => {
+      setDataCollectionForMarketing(consent);
+      this.context.trackEvent({
+        category: MetaMetricsEventCategory.Home,
+        event: MetaMetricsEventName.AnalyticsPreferenceSelected,
+        properties: {
+          has_marketing_consent: consent,
+          location: 'marketing_consent_modal',
+        },
+      });
+    };
+
+    return (
+      <Modal isOpen onClose={handleClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader
+            onClose={handleClose}
+            display={Display.Flex}
+            flexDirection={FlexDirection.Row}
+            fontWeight={FontWeight.Bold}
+            alignItems={AlignItems.center}
+            justifyContent={JustifyContent.center}
+            gap={4}
+            size={18}
+            paddingBottom={0}
+          >
+            {t('onboardedMetametricsTitle')}
+          </ModalHeader>
+          <ModalBody>
+            <Box
+              display={Display.Flex}
+              flexDirection={FlexDirection.Column}
+              gap={2}
+              margin={4}
+            >
+              <Typography>
+                {t('onboardedMetametricsParagraph1', [
+                  <a
+                    href={METAMETRICS_SETTINGS_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key="retention-link"
+                  >
+                    {t('onboardedMetametricsLink')}
+                  </a>,
+                ])}
+              </Typography>
+              <Typography>{t('onboardedMetametricsParagraph2')}</Typography>
+              <ul className="home__onboarding_list">
+                <li>{t('onboardedMetametricsKey1')}</li>
+                <li>{t('onboardedMetametricsKey2')}</li>
+                <li>{t('onboardedMetametricsKey3')}</li>
+              </ul>
+              <Typography>{t('onboardedMetametricsParagraph3')}</Typography>
+            </Box>
+          </ModalBody>
+          <ModalFooter>
+            <Box
+              display={Display.Flex}
+              flexDirection={FlexDirection.Row}
+              gap={2}
+              width={BlockSize.Full}
+            >
+              <Button type="secondary" onClick={() => handleConsent(false)}>
+                {t('onboardedMetametricsDisagree')}
+              </Button>
+              <Button type="primary" onClick={() => handleConsent(true)}>
+                {t('onboardedMetametricsAccept')}
+              </Button>
+            </Box>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    );
+  };
+
   renderPopover = () => {
     const { setConnectedStatusPopoverHasBeenShown } = this.props;
     const { t } = this.context;
@@ -803,8 +926,12 @@ export default class Home extends PureComponent {
     const {
       defaultHomeActiveTabName,
       onTabClick,
+      useExternalServices,
+      setBasicFunctionalityModalOpen,
       forgottenPassword,
       history,
+      participateInMetaMetrics,
+      dataCollectionForMarketing,
       ///: BEGIN:ONLY_INCLUDE_IF(build-main,build-beta,build-flask)
       connectedStatusPopoverHasBeenShown,
       isPopup,
@@ -840,10 +967,8 @@ export default class Home extends PureComponent {
       !process.env.IN_TEST &&
       !newNetworkAddedConfigurationId;
 
-    // TODO(dbrans): temporary fix to disable the smart transactions opt-in modal
-    // in 11.15 to unblock the release. Change this line in 11.16.
     const showSmartTransactionsOptInModal =
-      false && canSeeModals && isSmartTransactionsOptInModalAvailable;
+      canSeeModals && isSmartTransactionsOptInModalAvailable;
 
     const showWhatsNew =
       canSeeModals &&
@@ -881,6 +1006,10 @@ export default class Home extends PureComponent {
           exact
         />
         <div className="home__container">
+          {dataCollectionForMarketing === null &&
+          participateInMetaMetrics === true
+            ? this.renderOnboardingPopover()
+            : null}
           {
             ///: BEGIN:ONLY_INCLUDE_IF(build-main,build-beta,build-flask)
           }
@@ -905,6 +1034,18 @@ export default class Home extends PureComponent {
             ///: END:ONLY_INCLUDE_IF
           }
           <div className="home__main-view">
+            {useExternalServices ? null : (
+              <BannerAlert
+                margin={4}
+                marginBottom={0}
+                severity={Severity.Danger}
+                actionButtonLabel={t('basicConfigurationBannerCTA')}
+                actionButtonOnClick={() => {
+                  setBasicFunctionalityModalOpen();
+                }}
+                title={t('basicConfigurationBannerTitle')}
+              ></BannerAlert>
+            )}
             <div className="home__balance-wrapper">
               {
                 ///: BEGIN:ONLY_INCLUDE_IF(build-main,build-beta,build-flask)

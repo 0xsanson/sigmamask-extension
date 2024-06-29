@@ -165,7 +165,11 @@ import {
   TokenStandard,
   SIGNING_METHODS,
 } from '../../shared/constants/transaction';
-import { SWAPS_CLIENT_ID } from '../../shared/constants/swaps';
+import {
+  GAS_API_BASE_URL,
+  GAS_DEV_API_BASE_URL,
+  SWAPS_CLIENT_ID,
+} from '../../shared/constants/swaps';
 import {
   CHAIN_IDS,
   NETWORK_TYPES,
@@ -266,7 +270,7 @@ import { mmiKeyringBuilderFactory } from './mmi-keyring-builder-factory';
 ///: END:ONLY_INCLUDE_IF
 import ComposableObservableStore from './lib/ComposableObservableStore';
 import AccountTracker from './lib/account-tracker';
-import createDupeReqFilterMiddleware from './lib/createDupeReqFilterMiddleware';
+import createDupeReqFilterStream from './lib/createDupeReqFilterStream';
 import createLoggerMiddleware from './lib/createLoggerMiddleware';
 import { createMethodMiddleware } from './lib/rpc-method-middleware';
 import createOriginMiddleware from './lib/createOriginMiddleware';
@@ -747,6 +751,10 @@ export default class MetamaskController extends EventEmitter {
       allowedEvents: ['NetworkController:stateChange'],
     });
 
+    const gasApiBaseUrl = process.env.SWAPS_USE_DEV_APIS
+      ? GAS_DEV_API_BASE_URL
+      : GAS_API_BASE_URL;
+
     this.gasFeeController = new GasFeeController({
       state: initState.GasFeeController,
       interval: 10000,
@@ -766,12 +774,13 @@ export default class MetamaskController extends EventEmitter {
         ),
       getCurrentAccountEIP1559Compatibility:
         this.getCurrentAccountEIP1559Compatibility.bind(this),
+      legacyAPIEndpoint: `${gasApiBaseUrl}/networks/<chain_id>/gasPrices`,
+      EIP1559APIEndpoint: `${gasApiBaseUrl}/networks/<chain_id>/suggestedGasFees`,
       getCurrentNetworkLegacyGasAPICompatibility: () => {
         const { chainId } = this.networkController.state.providerConfig;
         return chainId === CHAIN_IDS.BSC;
       },
       getChainId: () => this.networkController.state.providerConfig.chainId,
-      infuraAPIKey: opts.infuraProjectId,
     });
 
     this.appStateController = new AppStateController({
@@ -800,6 +809,19 @@ export default class MetamaskController extends EventEmitter {
       messenger: currencyRateMessenger,
       state: initState.CurrencyController,
     });
+    const initialFetchExchangeRate =
+      this.currencyRateController.fetchExchangeRate.bind(
+        this.currencyRateController,
+      );
+    this.currencyRateController.fetchExchangeRate = (...args) => {
+      if (this.preferencesController.store.getState().useCurrencyRateCheck) {
+        return initialFetchExchangeRate(...args);
+      }
+      return {
+        conversionRate: null,
+        usdConversionRate: null,
+      };
+    };
 
     const phishingControllerMessenger = this.controllerMessenger.getRestricted({
       name: 'PhishingController',
@@ -811,8 +833,6 @@ export default class MetamaskController extends EventEmitter {
       hotlistRefreshInterval: process.env.IN_TEST ? 5 * SECOND : undefined,
       stalelistRefreshInterval: process.env.IN_TEST ? 30 * SECOND : undefined,
     });
-
-    this.phishingController.maybeUpdateState();
 
     ///: BEGIN:ONLY_INCLUDE_IF(blockaid)
     this.ppomController = new PPOMController({
@@ -1478,6 +1498,8 @@ export default class MetamaskController extends EventEmitter {
         if (!prevCompletedOnboarding && currCompletedOnboarding) {
           const { address } = this.accountsController.getSelectedAccount();
 
+          this._addAccountsWithBalance();
+
           this.postOnboardingInitialization();
           this.triggerNetworkrequests();
           // execute once the token detection on the post-onboarding
@@ -1759,6 +1781,8 @@ export default class MetamaskController extends EventEmitter {
         'AccountsController:getAccountByAddress',
         'AccountsController:setAccountName',
         'AccountsController:listAccounts',
+        'AccountsController:getSelectedAccount',
+        'AccountsController:setSelectedAccount',
       ],
     });
 
@@ -2244,7 +2268,13 @@ export default class MetamaskController extends EventEmitter {
   }
 
   postOnboardingInitialization() {
+    const { usePhishDetect } = this.preferencesController.store.getState();
+
     this.networkController.lookupNetwork();
+
+    if (usePhishDetect) {
+      this.phishingController.maybeUpdateState();
+    }
   }
 
   triggerNetworkrequests() {
@@ -2960,11 +2990,19 @@ export default class MetamaskController extends EventEmitter {
         metaMetricsController.setParticipateInMetaMetrics.bind(
           metaMetricsController,
         ),
+      setDataCollectionForMarketing:
+        metaMetricsController.setDataCollectionForMarketing.bind(
+          metaMetricsController,
+        ),
       setCurrentLocale: preferencesController.setCurrentLocale.bind(
         preferencesController,
       ),
       setIncomingTransactionsPreferences:
         preferencesController.setIncomingTransactionsPreferences.bind(
+          preferencesController,
+        ),
+      setServiceWorkerKeepAlivePreference:
+        preferencesController.setServiceWorkerKeepAlivePreference.bind(
           preferencesController,
         ),
       markPasswordForgotten: this.markPasswordForgotten.bind(this),
@@ -3051,6 +3089,7 @@ export default class MetamaskController extends EventEmitter {
           throw new Error(`No account found for address: ${address}`);
         }
       },
+      toggleExternalServices: this.toggleExternalServices.bind(this),
       addToken: tokensController.addToken.bind(tokensController),
       updateTokenType: tokensController.updateTokenType.bind(tokensController),
       setFeatureFlag: preferencesController.setFeatureFlag.bind(
@@ -3162,6 +3201,8 @@ export default class MetamaskController extends EventEmitter {
         appStateController.setSurveyLinkLastClickedOrClosed.bind(
           appStateController,
         ),
+      setOnboardingDate:
+        appStateController.setOnboardingDate.bind(appStateController),
       setNewPrivacyPolicyToastClickedOrClosed:
         appStateController.setNewPrivacyPolicyToastClickedOrClosed.bind(
           appStateController,
@@ -3753,6 +3794,9 @@ export default class MetamaskController extends EventEmitter {
   async createNewVaultAndRestore(password, encodedSeedPhrase) {
     const releaseLock = await this.createVaultMutex.acquire();
     try {
+      const { completedOnboarding } =
+        this.onboardingController.store.getState();
+
       const seedPhraseAsBuffer = Buffer.from(encodedSeedPhrase);
 
       // clear known identities
@@ -3773,7 +3817,9 @@ export default class MetamaskController extends EventEmitter {
 
       this.txController.clearUnapprovedTransactions();
 
-      this.tokenDetectionController.enable();
+      if (completedOnboarding) {
+        this.tokenDetectionController.enable();
+      }
 
       // create new vault
       const vault = await this.keyringController.createNewVaultAndRestore(
@@ -3781,54 +3827,60 @@ export default class MetamaskController extends EventEmitter {
         this._convertMnemonicToWordlistIndices(seedPhraseAsBuffer),
       );
 
-      // Scan accounts until we find an empty one
-      const { chainId } = this.networkController.state.providerConfig;
-      const ethQuery = new EthQuery(this.provider);
-      const accounts = await this.keyringController.getAccounts();
-      let address = accounts[accounts.length - 1];
+      if (completedOnboarding) {
+        await this._addAccountsWithBalance();
 
-      for (let count = accounts.length; ; count++) {
-        const balance = await this.getBalance(address, ethQuery);
-
-        if (balance === '0x0') {
-          // This account has no balance, so check for tokens
-          await this.tokenDetectionController.detectTokens({
-            selectedAddress: address,
-          });
-
-          const tokens =
-            this.tokensController.state.allTokens?.[chainId]?.[address];
-          const detectedTokens =
-            this.tokensController.state.allDetectedTokens?.[chainId]?.[address];
-
-          if (
-            (tokens?.length ?? 0) === 0 &&
-            (detectedTokens?.length ?? 0) === 0
-          ) {
-            // This account has no balance or tokens
-            if (count !== 1) {
-              await this.removeAccount(address);
-            }
-            break;
-          }
-        }
-
-        // This account has assets, so check the next one
-        ({ addedAccountAddress: address } =
-          await this.keyringController.addNewAccount(count));
+        // This must be set as soon as possible to communicate to the
+        // keyring's iframe and have the setting initialized properly
+        // Optimistically called to not block MetaMask login due to
+        // Ledger Keyring GitHub downtime
+        this.setLedgerTransportPreference();
       }
-
-      // This must be set as soon as possible to communicate to the
-      // keyring's iframe and have the setting initialized properly
-      // Optimistically called to not block MetaMask login due to
-      // Ledger Keyring GitHub downtime
-      this.setLedgerTransportPreference();
 
       this.selectFirstAccount();
 
       return vault;
     } finally {
       releaseLock();
+    }
+  }
+
+  async _addAccountsWithBalance() {
+    // Scan accounts until we find an empty one
+    const { chainId } = this.networkController.state.providerConfig;
+    const ethQuery = new EthQuery(this.provider);
+    const accounts = await this.keyringController.getAccounts();
+    let address = accounts[accounts.length - 1];
+
+    for (let count = accounts.length; ; count++) {
+      const balance = await this.getBalance(address, ethQuery);
+
+      if (balance === '0x0') {
+        // This account has no balance, so check for tokens
+        await this.tokenDetectionController.detectTokens({
+          selectedAddress: address,
+        });
+
+        const tokens =
+          this.tokensController.state.allTokens?.[chainId]?.[address];
+        const detectedTokens =
+          this.tokensController.state.allDetectedTokens?.[chainId]?.[address];
+
+        if (
+          (tokens?.length ?? 0) === 0 &&
+          (detectedTokens?.length ?? 0) === 0
+        ) {
+          // This account has no balance or tokens
+          if (count !== 1) {
+            await this.removeAccount(address);
+          }
+          break;
+        }
+      }
+
+      // This account has assets, so check the next one
+      ({ addedAccountAddress: address } =
+        await this.keyringController.addNewAccount(count));
     }
   }
 
@@ -3893,6 +3945,7 @@ export default class MetamaskController extends EventEmitter {
    * @param {string} password - The user's password
    */
   async submitPassword(password) {
+    const { completedOnboarding } = this.onboardingController.store.getState();
     await this.keyringController.submitPassword(password);
 
     ///: BEGIN:ONLY_INCLUDE_IF(build-mmi)
@@ -3911,7 +3964,9 @@ export default class MetamaskController extends EventEmitter {
     // keyring's iframe and have the setting initialized properly
     // Optimistically called to not block MetaMask login due to
     // Ledger Keyring GitHub downtime
-    this.setLedgerTransportPreference();
+    if (completedOnboarding) {
+      this.setLedgerTransportPreference();
+    }
   }
 
   async _loginUser(password) {
@@ -4082,6 +4137,10 @@ export default class MetamaskController extends EventEmitter {
    */
   async connectHardware(deviceName, page, hdPath) {
     const keyring = await this.getKeyringForDevice(deviceName, hdPath);
+
+    if (deviceName === HardwareDeviceNames.ledger) {
+      await this.setLedgerTransportPreference(keyring);
+    }
 
     let accounts = [];
     switch (page) {
@@ -4610,6 +4669,7 @@ export default class MetamaskController extends EventEmitter {
    * @param {string} [options.subjectType] - The type of the sender, i.e. subject.
    */
   setupUntrustedCommunication({ connectionStream, sender, subjectType }) {
+    const { completedOnboarding } = this.onboardingController.store.getState();
     const { usePhishDetect } = this.preferencesController.store.getState();
 
     let _subjectType;
@@ -4621,12 +4681,12 @@ export default class MetamaskController extends EventEmitter {
       _subjectType = SubjectType.Website;
     }
 
-    if (sender.url) {
+    if (usePhishDetect && completedOnboarding && sender.url) {
       const { hostname } = new URL(sender.url);
       this.phishingController.maybeUpdateState();
       // Check if new connection is blocked if phishing detection is on
       const phishingTestResponse = this.phishingController.test(hostname);
-      if (usePhishDetect && phishingTestResponse?.result) {
+      if (phishingTestResponse?.result) {
         this.sendPhishingWarning(connectionStream, hostname);
         this.metaMetricsController.trackEvent({
           event: MetaMetricsEventName.PhishingPageDisplayed,
@@ -4736,15 +4796,7 @@ export default class MetamaskController extends EventEmitter {
     this.emit('controllerConnectionChanged', this.activeControllerConnections);
 
     // set up postStream transport
-    outStream.on(
-      'data',
-      createMetaRPCHandler(
-        api,
-        outStream,
-        this.store,
-        this.localStoreApiWrapper,
-      ),
-    );
+    outStream.on('data', createMetaRPCHandler(api, outStream));
     const handleUpdate = (update) => {
       if (outStream._writableState.ended) {
         return;
@@ -4825,12 +4877,14 @@ export default class MetamaskController extends EventEmitter {
       tabId,
     });
 
+    const dupeReqFilterStream = createDupeReqFilterStream();
+
     // setup connection
     const providerStream = createEngineStream({ engine });
 
     const connectionId = this.addConnection(origin, { engine });
 
-    pump(outStream, providerStream, outStream, (err) => {
+    pump(outStream, dupeReqFilterStream, providerStream, outStream, (err) => {
       // handle any middleware cleanup
       engine._middleware.forEach((mid) => {
         if (mid.destroy && typeof mid.destroy === 'function') {
@@ -4907,10 +4961,6 @@ export default class MetamaskController extends EventEmitter {
     subscriptionManager.events.on('notification', (message) =>
       engine.emit('notification', message),
     );
-
-    if (isManifestV3) {
-      engine.push(createDupeReqFilterMiddleware());
-    }
 
     // append tabId to each request if it exists
     if (tabId) {
@@ -5632,6 +5682,18 @@ export default class MetamaskController extends EventEmitter {
     };
   }
 
+  toggleExternalServices(useExternal) {
+    this.preferencesController.toggleExternalServices(useExternal);
+    this.tokenListController.updatePreventPollingOnNetworkRestart(!useExternal);
+    if (useExternal) {
+      this.tokenDetectionController.enable();
+      this.gasFeeController.enableNonRPCGasFeeApis();
+    } else {
+      this.tokenDetectionController.disable();
+      this.gasFeeController.disableNonRPCGasFeeApis();
+    }
+  }
+
   //=============================================================================
   // CONFIG
   //=============================================================================
@@ -5659,14 +5721,16 @@ export default class MetamaskController extends EventEmitter {
   /**
    * Sets the Ledger Live preference to use for Ledger hardware wallet support
    *
+   * @param _keyring
    * @deprecated This method is deprecated and will be removed in the future.
    * Only webhid connections are supported in chrome and u2f in firefox.
    */
-  async setLedgerTransportPreference() {
+  async setLedgerTransportPreference(_keyring) {
     const transportType = window.navigator.hid
       ? LedgerTransportTypes.webhid
       : LedgerTransportTypes.u2f;
-    const keyring = await this.getKeyringForDevice(HardwareDeviceNames.ledger);
+    const keyring =
+      _keyring || (await this.getKeyringForDevice(HardwareDeviceNames.ledger));
     if (keyring?.updateTransportMethod) {
       return keyring.updateTransportMethod(transportType).catch((e) => {
         throw e;

@@ -3102,7 +3102,7 @@ export function setSmartTransactionsOptInStatus(
   };
 }
 
-export function setAutoLockTimeLimit(value: boolean) {
+export function setAutoLockTimeLimit(value: number | null) {
   return setPreference('autoLockTimeLimit', value);
 }
 
@@ -3167,6 +3167,24 @@ export function resetOnboarding(): ThunkAction<
 export function resetOnboardingAction() {
   return {
     type: actionConstants.RESET_ONBOARDING,
+  };
+}
+
+export function setServiceWorkerKeepAlivePreference(
+  value: boolean,
+): ThunkAction<void, MetaMaskReduxState, unknown, AnyAction> {
+  return async (dispatch: MetaMaskReduxDispatch) => {
+    dispatch(showLoadingIndication());
+    log.debug(`background.setServiceWorkerKeepAlivePreference`);
+    try {
+      await submitRequestToBackground('setServiceWorkerKeepAlivePreference', [
+        value,
+      ]);
+    } catch (error) {
+      dispatch(displayWarning(error));
+    } finally {
+      dispatch(hideLoadingIndication());
+    }
   };
 }
 
@@ -3243,6 +3261,26 @@ export function setParticipateInMetaMetrics(
           resolve([participationPreference, metaMetricsId as string]);
         },
       );
+    });
+  };
+}
+
+export function setDataCollectionForMarketing(
+  dataCollectionPreference: boolean,
+): ThunkAction<
+  Promise<[boolean, string]>,
+  MetaMaskReduxState,
+  unknown,
+  AnyAction
+> {
+  return async (dispatch: MetaMaskReduxDispatch) => {
+    log.debug(`background.setDataCollectionForMarketing`);
+    await submitRequestToBackground('setDataCollectionForMarketing', [
+      dataCollectionPreference,
+    ]);
+    dispatch({
+      type: actionConstants.SET_DATA_COLLECTION_FOR_MARKETING,
+      value: dataCollectionPreference,
     });
   };
 }
@@ -3479,6 +3517,19 @@ export function setIpfsGateway(
   return (dispatch: MetaMaskReduxDispatch) => {
     log.debug(`background.setIpfsGateway`);
     callBackgroundMethod('setIpfsGateway', [val], (err) => {
+      if (err) {
+        dispatch(displayWarning(err));
+      }
+    });
+  };
+}
+
+export function toggleExternalServices(
+  val: boolean,
+): ThunkAction<void, MetaMaskReduxState, unknown, AnyAction> {
+  return (dispatch: MetaMaskReduxDispatch) => {
+    log.debug(`background.toggleExternalServices`);
+    callBackgroundMethod('toggleExternalServices', [val], (err) => {
       if (err) {
         dispatch(displayWarning(err));
       }
@@ -4197,6 +4248,12 @@ export function setSurveyLinkLastClickedOrClosed(time: number) {
 export function setNewPrivacyPolicyToastClickedOrClosed() {
   return async () => {
     await submitRequestToBackground('setNewPrivacyPolicyToastClickedOrClosed');
+  };
+}
+
+export function setOnboardingDate() {
+  return async () => {
+    await submitRequestToBackground('setOnboardingDate');
   };
 }
 

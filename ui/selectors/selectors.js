@@ -1136,6 +1136,10 @@ export function getIpfsGateway(state) {
   return state.metamask.ipfsGateway;
 }
 
+export function getUseExternalServices(state) {
+  return state.metamask.useExternalServices;
+}
+
 export function getInfuraBlocked(state) {
   return (
     state.metamask.networksMetadata[getSelectedNetworkClientId(state)]
@@ -1397,10 +1401,11 @@ export const getConnectedSitesListWithNetworkInfo = createDeepEqualSelector(
   getConnectedSitesList,
   getAllDomains,
   getAllNetworks,
-  (sitesList, domains, networks) => {
+  getSelectedNetworkClientId,
+  (sitesList, domains, networks, selectedNetworkClientId) => {
     Object.keys(sitesList).forEach((siteKey) => {
       const connectedNetwork = networks.find(
-        (network) => network.id === domains[siteKey],
+        (network) => network.id === domains[siteKey] || selectedNetworkClientId,
       );
       // For the testnets, if we do not have an image, we will have a fallback string
       sitesList[siteKey].networkIconUrl =
@@ -1824,11 +1829,17 @@ export function getShowSurveyToast(state) {
  * @returns {boolean} True if the current date is on or after the new privacy policy date and the privacy policy toast was not clicked or closed. False otherwise.
  */
 export function getShowPrivacyPolicyToast(state) {
-  const { newPrivacyPolicyToastClickedOrClosed } = state.metamask;
+  const { newPrivacyPolicyToastClickedOrClosed, onboardingDate } =
+    state.metamask;
   const newPrivacyPolicyDate = new Date(PRIVACY_POLICY_DATE);
   const currentDate = new Date(Date.now());
   return (
-    !newPrivacyPolicyToastClickedOrClosed && currentDate >= newPrivacyPolicyDate
+    !newPrivacyPolicyToastClickedOrClosed &&
+    currentDate >= newPrivacyPolicyDate &&
+    // users who onboarded before the privacy policy date should see the notice
+    // and
+    // old users who don't have onboardingDate set should see the notice
+    (onboardingDate < newPrivacyPolicyDate || !onboardingDate)
   );
 }
 
@@ -1843,6 +1854,10 @@ export function getShowOutdatedBrowserWarning(state) {
 
 export function getNewPrivacyPolicyToastShownDate(state) {
   return state.metamask.newPrivacyPolicyToastShownDate;
+}
+
+export function getOnboardingDate(state) {
+  return state.metamask.onboardingDate;
 }
 
 export function getShowBetaHeader(state) {
@@ -2358,6 +2373,14 @@ export function getUpdatedAndSortedAccounts(state) {
 
 export function getOnboardedInThisUISession(state) {
   return state.appState.onboardedInThisUISession;
+}
+
+export function getShowBasicFunctionalityModal(state) {
+  return state.appState.showBasicFunctionalityModal;
+}
+
+export function getExternalServicesOnboardingToggleState(state) {
+  return state.appState.externalServicesOnboardingToggleState;
 }
 
 export const useSafeChainsListValidationSelector = (state) => {

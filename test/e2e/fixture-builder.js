@@ -89,6 +89,8 @@ function defaultFixture(inputChainId = CHAIN_IDS.LOCALHOST) {
           [CHAIN_IDS.LOCALHOST]: true,
         },
         snapsInstallPrivacyWarningShown: true,
+        newPrivacyPolicyToastClickedOrClosed: true,
+        newPrivacyPolicyToastShownDate: Date.now(),
       },
       CurrencyController: {
         currentCurrency: 'usd',
@@ -114,6 +116,7 @@ function defaultFixture(inputChainId = CHAIN_IDS.LOCALHOST) {
         fragments: {},
         metaMetricsId: null,
         participateInMetaMetrics: false,
+        dataCollectionForMarketing: false,
         traits: {},
       },
       NetworkController: {
@@ -156,6 +159,7 @@ function defaultFixture(inputChainId = CHAIN_IDS.LOCALHOST) {
       PreferencesController: {
         advancedGasFee: null,
         currentLocale: 'en',
+        useExternalServices: true,
         dismissSeedBackUpReminder: true,
         featureFlags: {},
         forgottenPassword: false,
@@ -307,6 +311,7 @@ function onboardingFixture() {
           useNativeCurrencyAsPrimaryCurrency: true,
           petnamesEnabled: true,
         },
+        useExternalServices: true,
         theme: 'light',
         useBlockie: false,
         useNftDetection: false,

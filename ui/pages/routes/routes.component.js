@@ -133,6 +133,7 @@ import {
   IconName,
 } from '../../components/component-library';
 import { ToggleIpfsModal } from '../../components/app/nft-default-image/toggle-ipfs-modal';
+import { BasicConfigurationModal } from '../../components/app/basic-configuration-modal';
 ///: BEGIN:ONLY_INCLUDE_IF(keyring-snaps)
 import KeyringSnapRemovalResult from '../../components/app/modals/keyring-snap-removal-modal';
 ///: END:ONLY_INCLUDE_IF
@@ -187,6 +188,7 @@ export default class Routes extends Component {
     isImportNftsModalOpen: PropTypes.bool.isRequired,
     hideImportNftsModal: PropTypes.func.isRequired,
     isIpfsModalOpen: PropTypes.bool.isRequired,
+    isBasicConfigurationModalOpen: PropTypes.bool.isRequired,
     hideIpfsModal: PropTypes.func.isRequired,
     isImportTokensModalOpen: PropTypes.bool.isRequired,
     hideImportTokensModal: PropTypes.func.isRequired,
@@ -656,11 +658,13 @@ export default class Routes extends Component {
     const isPrivacyToastRecent = this.getIsPrivacyToastRecent();
     const isPrivacyToastNotShown = !newPrivacyPolicyToastShownDate;
 
+    if (!this.onHomeScreen()) {
+      return null;
+    }
+
     return (
       <ToastContainer>
-        {showConnectAccountToast &&
-        this.onHomeScreen() &&
-        !this.state.hideConnectAccountToast ? (
+        {showConnectAccountToast && !this.state.hideConnectAccountToast ? (
           <Toast
             key="connect-account-toast"
             startAdornment={
@@ -817,6 +821,7 @@ export default class Routes extends Component {
       isImportNftsModalOpen,
       hideImportNftsModal,
       isIpfsModalOpen,
+      isBasicConfigurationModalOpen,
       hideIpfsModal,
       hideImportTokensModal,
       hideDeprecatedNetworkModal,
@@ -912,6 +917,7 @@ export default class Routes extends Component {
         {isIpfsModalOpen ? (
           <ToggleIpfsModal onClose={() => hideIpfsModal()} />
         ) : null}
+        {isBasicConfigurationModalOpen ? <BasicConfigurationModal /> : null}
         {isImportTokensModalOpen ? (
           <ImportTokensModal onClose={() => hideImportTokensModal()} />
         ) : null}

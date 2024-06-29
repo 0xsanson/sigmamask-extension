@@ -556,6 +556,34 @@
   "basic": {
     "message": "Basic"
   },
+  "basicConfigurationBannerCTA": {
+    "message": "Turn on basic functionality"
+  },
+  "basicConfigurationBannerTitle": {
+    "message": "Basic functionality is off"
+  },
+  "basicConfigurationDescription": {
+    "message": "MetaMask offers basic features like token details and gas settings through internet services. When you use internet services, your IP address is shared, in this case with MetaMask. This is just like when you visit any website. MetaMask uses this data temporarily and never sells your data. You can use a VPN or turn off these services, but it may affect your MetaMask experience. To learn more read our $1.",
+    "description": "$1 is to be replaced by the message for privacyMsg, and will link to https://consensys.io/privacy-policy"
+  },
+  "basicConfigurationLabel": {
+    "message": "Basic functionality"
+  },
+  "basicConfigurationModalCheckbox": {
+    "message": "I understand and want to continue"
+  },
+  "basicConfigurationModalDisclaimerOff": {
+    "message": "This means you won't fully optimize your time on MetaMask. Basic features (like token details, optimal gas settings, and others) won't be available to you."
+  },
+  "basicConfigurationModalDisclaimerOn": {
+    "message": "To optimize your time on MetaMask, you’ll need to turn on this feature. Basic functions (like token details, optimal gas settings, and others) are important to the web3 experience."
+  },
+  "basicConfigurationModalHeadingOff": {
+    "message": "Turn off basic functionality"
+  },
+  "basicConfigurationModalHeadingOn": {
+    "message": "Turn on basic functionality"
+  },
   "beCareful": {
     "message": "Be careful"
   },
@@ -756,6 +784,9 @@
   },
   "closeExtension": {
     "message": "Close extension"
+  },
+  "closeWindowAnytime": {
+    "message": "You may close this window anytime."
   },
   "coingecko": {
     "message": "CoinGecko"
@@ -1186,6 +1217,18 @@
   "dataBackupSeemsCorrupt": {
     "message": "Can not restore your data. The file appears to be corrupt."
   },
+  "dataCollectionForMarketing": {
+    "message": "Data collection for marketing"
+  },
+  "dataCollectionForMarketingDescription": {
+    "message": "We'll use MetaMetrics to learn how you interact with our marketing communications. We may share relevant news (like product features and other materials)."
+  },
+  "dataCollectionWarningPopoverButton": {
+    "message": "Okay"
+  },
+  "dataCollectionWarningPopoverDescription": {
+    "message": "You turned off data collection for our marketing purposes. This only applies to this device. If you use MetaMask on other devices, make sure to opt out there as well."
+  },
   "dataHex": {
     "message": "Hex"
   },
@@ -1373,6 +1416,9 @@
   "developerOptionsResetStatesOnboarding": {
     "message": "Resets various states related to onboarding and redirects to the \"Secure Your Wallet\" onboarding page."
   },
+  "developerOptionsServiceWorkerKeepAlive": {
+    "message": "Results in a timestamp being continuously saved to session.storage"
+  },
   "disabledGasOptionToolTipMessage": {
     "message": "“$1” is disabled because it does not meet the minimum of a 10% increase from the original gas fee.",
     "description": "$1 is gas estimate type which can be market or aggressive"
@@ -1444,9 +1490,6 @@
   },
   "done": {
     "message": "Done"
-  },
-  "dontEnableEnhancedProtection": {
-    "message": "Don't enable enhanced protection"
   },
   "dontShowThisAgain": {
     "message": "Don't show this again"
@@ -2526,6 +2569,9 @@
     "message": "Make sure nobody is looking",
     "description": "Warning to users to be care while creating and saving their new Secret Recovery Phrase"
   },
+  "manageInSettings": {
+    "message": "Manage in settings"
+  },
   "max": {
     "message": "Max"
   },
@@ -2941,6 +2987,9 @@
   "noDomainResolution": {
     "message": "No resolution for domain provided."
   },
+  "noHardwareWalletOrSnapsSupport": {
+    "message": "Snaps, and most hardware wallets, will not work with your current browser version."
+  },
   "noNFTs": {
     "message": "No NFTs yet"
   },
@@ -3172,6 +3221,37 @@
   "on": {
     "message": "On"
   },
+  "onboardedMetametricsAccept": {
+    "message": "I agree"
+  },
+  "onboardedMetametricsDisagree": {
+    "message": "No thanks"
+  },
+  "onboardedMetametricsKey1": {
+    "message": "Latest developments"
+  },
+  "onboardedMetametricsKey2": {
+    "message": "Product features"
+  },
+  "onboardedMetametricsKey3": {
+    "message": "Other relevant promotional materials"
+  },
+  "onboardedMetametricsLink": {
+    "message": "MetaMetrics"
+  },
+  "onboardedMetametricsParagraph1": {
+    "message": "In addition to $1, we'd like to use data to understand how you interact with marketing communications.",
+    "description": "$1 represents the 'onboardedMetametricsLink' locale string"
+  },
+  "onboardedMetametricsParagraph2": {
+    "message": "This helps us personalize what we share with you, like:"
+  },
+  "onboardedMetametricsParagraph3": {
+    "message": "Remember, we never sell the data you provide and you can opt out any time."
+  },
+  "onboardedMetametricsTitle": {
+    "message": "Help us enhance your experience"
+  },
   "onboarding": {
     "message": "Onboarding"
   },
@@ -3288,6 +3368,9 @@
   },
   "onboardingMetametricsTitle": {
     "message": "Help us improve SigmaMask"
+  },
+  "onboardingMetametricsUseDataCheckbox": {
+    "message": "We’ll use this data to learn how you interact with our marketing communications. We may share relevant news (like product features)."
   },
   "onboardingPinExtensionBillboardAccess": {
     "message": "Full access"
@@ -4285,6 +4368,9 @@
   "sepolia": {
     "message": "Sepolia test network"
   },
+  "serviceWorkerKeepAlive": {
+    "message": "Service Worker Keep Alive"
+  },
   "setAdvancedPrivacySettingsDetails": {
     "message": "SigmaMask uses these trusted third-party services to enhance product usability and safety."
   },
@@ -4889,7 +4975,7 @@
     "description": "This message is shown to a user if their swap fails. The $1 will be replaced by support.metamask.io"
   },
   "stxOptInDescription": {
-    "message": "Turn on Smart Transactions for more reliable and secure transactions on ETH Mainnet. $1"
+    "message": "Turn on Smart Transactions for more reliable and secure transactions on Ethereum Mainnet. $1"
   },
   "stxPendingPrivatelySubmittingSwap": {
     "message": "Privately submitting your Swap..."
@@ -5697,6 +5783,12 @@
   "tryAgain": {
     "message": "Try again"
   },
+  "turnOff": {
+    "message": "Turn off"
+  },
+  "turnOn": {
+    "message": "Turn on"
+  },
   "turnOnTokenDetection": {
     "message": "Turn on enhanced token detection"
   },
@@ -5881,7 +5973,7 @@
     "message": "View on Opensea"
   },
   "viewTransaction": {
-    "message": "View  transaction"
+    "message": "View transaction"
   },
   "viewinCustodianApp": {
     "message": "View in custodian app"
