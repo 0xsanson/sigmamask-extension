@@ -4228,6 +4228,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@metamask/base-controller@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@metamask/base-controller@npm:6.0.0"
+  dependencies:
+    "@metamask/utils": "npm:^8.3.0"
+    immer: "npm:^9.0.6"
+  checksum: 569ecd28499c0353930471db6be6625629407f6c3e4409a96243caaf515b4db78041a8d8aa6185b82d83095ceb0f7b521e4023bad663b021ab04bb64870b21d1
+  languageName: node
+  linkType: hard
+
 "@metamask/browser-passworder@npm:^4.3.0":
   version: 4.3.0
   resolution: "@metamask/browser-passworder@npm:4.3.0"
@@ -4254,6 +4264,40 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@metamask/controller-utils@file:../SigmaMaskCore/packages/controller-utils::locator=metamask-crx%40workspace%3A.":
+  version: 11.0.0
+  resolution: "@metamask/controller-utils@file:../SigmaMaskCore/packages/controller-utils#../SigmaMaskCore/packages/controller-utils::hash=40299e&locator=metamask-crx%40workspace%3A."
+  dependencies:
+    "@ethereumjs/util": "npm:^8.1.0"
+    "@metamask/eth-query": "npm:^4.0.0"
+    "@metamask/ethjs-unit": "npm:^0.3.0"
+    "@metamask/utils": "npm:^8.3.0"
+    "@spruceid/siwe-parser": "npm:2.1.0"
+    "@types/bn.js": "npm:^5.1.5"
+    bn.js: "npm:^5.2.1"
+    eth-ens-namehash: "npm:^2.0.8"
+    fast-deep-equal: "npm:^3.1.3"
+  checksum: 84bc6d8652b9be8f85d8130735348f43ef823bf2cf6ea42115c7b8c4d30f675cc684d53450d24bb6e1afa9272bc7f323b8d6ed74c0db6a3c98908366e1cb631d
+  languageName: node
+  linkType: hard
+
+"@metamask/controller-utils@npm:^11.0.0":
+  version: 11.0.0
+  resolution: "@metamask/controller-utils@npm:11.0.0"
+  dependencies:
+    "@ethereumjs/util": "npm:^8.1.0"
+    "@metamask/eth-query": "npm:^4.0.0"
+    "@metamask/ethjs-unit": "npm:^0.3.0"
+    "@metamask/utils": "npm:^8.3.0"
+    "@spruceid/siwe-parser": "npm:2.1.0"
+    "@types/bn.js": "npm:^5.1.5"
+    bn.js: "npm:^5.2.1"
+    eth-ens-namehash: "npm:^2.0.8"
+    fast-deep-equal: "npm:^3.1.3"
+  checksum: 3bb18d6dbac04b1b2566b0c207614d216829a1ab77d1192e3d02f2c3c3a658c6a4d200a285433b8e583c1f33fddb9e07043af7d05a7cb88fd055a90ad52ee843
+  languageName: node
+  linkType: hard
+
 "@metamask/controller-utils@npm:^8.0.1, @metamask/controller-utils@npm:^8.0.2, @metamask/controller-utils@npm:^8.0.4":
   version: 8.0.4
   resolution: "@metamask/controller-utils@npm:8.0.4"
@@ -4269,7 +4313,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/controller-utils@npm:^9.0.1, @metamask/controller-utils@npm:^9.0.2, @metamask/controller-utils@npm:^9.1.0":
+"@metamask/controller-utils@npm:^9.0.1, @metamask/controller-utils@npm:^9.0.2":
   version: 9.1.0
   resolution: "@metamask/controller-utils@npm:9.1.0"
   dependencies:
@@ -4394,6 +4438,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@metamask/eth-block-tracker@npm:^9.0.2, @metamask/eth-block-tracker@npm:^9.0.3":
+  version: 9.0.3
+  resolution: "@metamask/eth-block-tracker@npm:9.0.3"
+  dependencies:
+    "@metamask/eth-json-rpc-provider": "npm:^3.0.2"
+    "@metamask/safe-event-emitter": "npm:^3.0.0"
+    "@metamask/utils": "npm:^8.1.0"
+    json-rpc-random-id: "npm:^1.0.1"
+    pify: "npm:^5.0.0"
+  checksum: f49bb158b2c9669e91813a1f34948a6c2a2d1f8507ea0b1afae9a003a4d276d892b5cde4c183f970fcec32f253a14f1abf39b6411beabeb113eeed75cd7e29b8
+  languageName: node
+  linkType: hard
+
 "@metamask/eth-hd-keyring@npm:^7.0.1":
   version: 7.0.1
   resolution: "@metamask/eth-hd-keyring@npm:7.0.1"
@@ -4433,20 +4490,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/eth-json-rpc-middleware@npm:^12.1.0":
-  version: 12.1.0
-  resolution: "@metamask/eth-json-rpc-middleware@npm:12.1.0"
+"@metamask/eth-json-rpc-middleware@npm:^12.1.0, @metamask/eth-json-rpc-middleware@npm:^12.1.1":
+  version: 12.1.2
+  resolution: "@metamask/eth-json-rpc-middleware@npm:12.1.2"
   dependencies:
-    "@metamask/eth-json-rpc-provider": "npm:^2.1.0"
+    "@metamask/eth-block-tracker": "npm:^9.0.3"
+    "@metamask/eth-json-rpc-provider": "npm:^3.0.2"
     "@metamask/eth-sig-util": "npm:^7.0.0"
-    "@metamask/json-rpc-engine": "npm:^7.1.1"
+    "@metamask/json-rpc-engine": "npm:^8.0.2"
     "@metamask/rpc-errors": "npm:^6.0.0"
     "@metamask/utils": "npm:^8.1.0"
-    eth-block-tracker: "npm:^8.0.0"
     klona: "npm:^2.0.6"
     pify: "npm:^5.0.0"
     safe-stable-stringify: "npm:^2.4.3"
-  checksum: 35a34dba839b957068030880328b43aabca615cc9f9fbf2d11fd998f0cc622ff3eec87582861b6cc517ee18cbd652f5c237647d651aa939151ac3f8738abae73
+  checksum: 1c0f186a35765394a28695bcade84c636b0c92cf3252219d1e9cbdd31231ad09fea5ec7bff7d31e2c7fe4d2158f15b54a5e42166549b69af1f7e475a1c7ae536
   languageName: node
   linkType: hard
 
@@ -4469,6 +4526,17 @@ __metadata:
     "@metamask/safe-event-emitter": "npm:^3.0.0"
     "@metamask/utils": "npm:^8.3.0"
   checksum: 63778defd3055633cbf0aed2d6fd0f8a1d866908be7b16b516fdb26ae6dcd34b2aefdfed80828c2af105a30ec3c16d7d0894bc6a73e2661515bcad6b6b6be4e2
+  languageName: node
+  linkType: hard
+
+"@metamask/eth-json-rpc-provider@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@metamask/eth-json-rpc-provider@npm:4.0.0"
+  dependencies:
+    "@metamask/json-rpc-engine": "npm:^9.0.0"
+    "@metamask/safe-event-emitter": "npm:^3.0.0"
+    "@metamask/utils": "npm:^8.3.0"
+  checksum: 00e87f5d70e044d3dfe7a62ae8c3b530e92dea91de2ad921dee00cd3307fbb1444c5441a05f6178aaf81e3b11f6feeccaa4a8683edf058bf7769c00efeb8915a
   languageName: node
   linkType: hard
 
@@ -4820,6 +4888,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@metamask/json-rpc-engine@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "@metamask/json-rpc-engine@npm:9.0.0"
+  dependencies:
+    "@metamask/rpc-errors": "npm:^6.2.1"
+    "@metamask/safe-event-emitter": "npm:^3.0.0"
+    "@metamask/utils": "npm:^8.3.0"
+  checksum: 9ddde2ca81e3b3a70e0cc752b5e22e436723cafa1948cbb45d63a42796a1260ff0f9356ebda0d375d9aae81232e77e487a8d0e1273aed3aa83ca0fe3e2f2763f
+  languageName: node
+  linkType: hard
+
 "@metamask/json-rpc-middleware-stream@npm:^7.0.1":
   version: 7.0.1
   resolution: "@metamask/json-rpc-middleware-stream@npm:7.0.1"
@@ -5048,6 +5127,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@metamask/network-controller@file:../SigmaMaskCore/packages/network-controller::locator=metamask-crx%40workspace%3A.":
+  version: 19.0.0
+  resolution: "@metamask/network-controller@file:../SigmaMaskCore/packages/network-controller#../SigmaMaskCore/packages/network-controller::hash=4ecdb7&locator=metamask-crx%40workspace%3A."
+  dependencies:
+    "@metamask/base-controller": "npm:^6.0.0"
+    "@metamask/controller-utils": "npm:^11.0.0"
+    "@metamask/eth-block-tracker": "npm:^9.0.2"
+    "@metamask/eth-json-rpc-infura": "npm:^9.1.0"
+    "@metamask/eth-json-rpc-middleware": "npm:^12.1.1"
+    "@metamask/eth-json-rpc-provider": "npm:^4.0.0"
+    "@metamask/eth-query": "npm:^4.0.0"
+    "@metamask/json-rpc-engine": "npm:^9.0.0"
+    "@metamask/rpc-errors": "npm:^6.2.1"
+    "@metamask/swappable-obj-proxy": "npm:^2.2.0"
+    "@metamask/utils": "npm:^8.3.0"
+    async-mutex: "npm:^0.5.0"
+    immer: "npm:^9.0.6"
+    uuid: "npm:^8.3.2"
+  checksum: 7f1fa9ec011f3511fb09c81f222c1c4bf3f198a6716dfd25bb603546f356934483324b37f57c21a78d64efb589849820b435ec55f69675e12bd5e60ae169c342
+  languageName: node
+  linkType: hard
+
 "@metamask/network-controller@npm:18.1.0":
   version: 18.1.0
   resolution: "@metamask/network-controller@npm:18.1.0"
@@ -5067,28 +5168,6 @@ __metadata:
     immer: "npm:^9.0.6"
     uuid: "npm:^8.3.2"
   checksum: cc3751205de1514333a99a638fc6fa7bdaa7fac505e32531fb1a71af5e9839e994de79c59ab91b08bdc8d3fbb4bb17330a677adf75754e5f56745d6d68e56515
-  languageName: node
-  linkType: hard
-
-"@metamask/network-controller@npm:^18.1.1":
-  version: 18.1.1
-  resolution: "@metamask/network-controller@npm:18.1.1"
-  dependencies:
-    "@metamask/base-controller": "npm:^5.0.2"
-    "@metamask/controller-utils": "npm:^9.1.0"
-    "@metamask/eth-json-rpc-infura": "npm:^9.1.0"
-    "@metamask/eth-json-rpc-middleware": "npm:^12.1.0"
-    "@metamask/eth-json-rpc-provider": "npm:^3.0.2"
-    "@metamask/eth-query": "npm:^4.0.0"
-    "@metamask/json-rpc-engine": "npm:^8.0.2"
-    "@metamask/rpc-errors": "npm:^6.2.1"
-    "@metamask/swappable-obj-proxy": "npm:^2.2.0"
-    "@metamask/utils": "npm:^8.3.0"
-    async-mutex: "npm:^0.2.6"
-    eth-block-tracker: "npm:^8.0.0"
-    immer: "npm:^9.0.6"
-    uuid: "npm:^8.3.2"
-  checksum: 1542b223851df1b316e5c5387712356dbbd84b6acd10b221d9802e5699a5d6baf6f1065da784fe0a2663b3843f82ce92270f94244e1d68f83aa3978e6c7ed76d
   languageName: node
   linkType: hard
 
@@ -12167,6 +12246,15 @@ __metadata:
   dependencies:
     tslib: "npm:^2.4.0"
   checksum: 4a55065aae8c7283e45e2a8ac38ba9812f030696640d650c4ec62cfd67e5d61bd698e67b758a81fcb845e2d5ea1d857106f9235cc4282ad40cd1944b26fde1b2
+  languageName: node
+  linkType: hard
+
+"async-mutex@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "async-mutex@npm:0.5.0"
+  dependencies:
+    tslib: "npm:^2.4.0"
+  checksum: 4c6bfce1cc9cd43f723c4d96403ac5f4757f885c953b839cde6956ec8817ff39623b82d67614de10c7933e21626925882fb9bac367db7d15d7cb4f84228722c9
   languageName: node
   linkType: hard
 

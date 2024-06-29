@@ -648,10 +648,19 @@ export const getTestNetworks = createDeepEqualSelector(
   getNetworkConfigurations,
   (networkConfigurations = {}) => {
     return [
-      // Localhosts
-      ...Object.values(networkConfigurations)
-        .filter(({ chainId }) => chainId === CHAIN_IDS.LOCALHOST)
-        .map((network) => ({ ...network, removable: true })),
+      {
+        chainId: CHAIN_IDS.SEPOLIA,
+        nickname: SEPOLIA_DISPLAY_NAME,
+        rpcUrl: CHAIN_ID_TO_RPC_URL_MAP[CHAIN_IDS.SEPOLIA],
+        providerType: NETWORK_TYPES.SEPOLIA,
+        ticker: TEST_NETWORK_TICKER_MAP[NETWORK_TYPES.SEPOLIA],
+        id: NETWORK_TYPES.SEPOLIA,
+        removable: false,
+      },
+      // // Localhosts
+      // ...Object.values(networkConfigurations)
+      //   .filter(({ chainId }) => chainId === CHAIN_IDS.LOCALHOST)
+      //   .map((network) => ({ ...network, removable: true })),
     ];
   },
 );
